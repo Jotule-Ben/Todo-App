@@ -40,3 +40,15 @@
   line-height: 1.5;
   padding-bottom: 30px;
 }
+
+#landingPage button {
+  font-size: 16px;
+  padding: 10px 25px;
+  color: ghostwhite;
+  background-color: rgb(60, 35, 35);
+  border: 1px solid rgb(60, 35, 35);
+  border-radius: 10%;
+  margin-left: 240px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
