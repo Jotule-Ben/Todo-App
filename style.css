@@ -10,3 +10,25 @@
   max-width: 600px;
   padding-top: 100px;
 }
+
+#heading h1 {
+  font-size: 50px;
+  padding-bottom: 10px;
+}
+
+#heading {
+  color: rgb(22, 185, 240);
+  text-align: center;
+}
+
+#heading span:first-child {
+  color: rgb(210, 78, 104);
+}
+
+#heading span:nth-child(2) {
+  color: rgb(155, 211, 59);
+}
+
+#heading span:last-of-type {
+  color: rgb(206, 33, 206);
+}
