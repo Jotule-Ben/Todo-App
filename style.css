@@ -32,3 +32,11 @@
 #heading span:last-of-type {
   color: rgb(206, 33, 206);
 }
+
+.p {
+  text-align: center;
+  font-size: 18px;
+  color: rgb(94, 90, 90);
+  line-height: 1.5;
+  padding-bottom: 30px;
+}
