@@ -8,7 +8,7 @@
 #landingPage {
   margin: auto;
   max-width: 600px;
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
 #heading h1 {
@@ -17,20 +17,24 @@
 }
 
 #heading {
-  color: rgb(22, 185, 240);
+  /* color: rgb(112, 211, 243); */
+  color: #c9e2f9;
   text-align: center;
 }
 
 #heading span:first-child {
-  color: rgb(210, 78, 104);
+  /* color: rgb(236, 125, 147); */
+  color: #fecbcd;
 }
 
 #heading span:nth-child(2) {
-  color: rgb(155, 211, 59);
+  /* color: rgb(197, 234, 134); */
+  color: #d3f1d0;
 }
 
 #heading span:last-of-type {
-  color: rgb(206, 33, 206);
+  /* color: rgb(241, 130, 241); */
+  color: #d8d3fc;
 }
 
 .p {
@@ -45,8 +49,10 @@
   font-size: 16px;
   padding: 10px 25px;
   color: ghostwhite;
-  background-color: rgb(60, 35, 35);
-  border: 1px solid rgb(60, 35, 35);
+  /* background-color: rgb(60, 35, 35); */
+  background-color: #5e5b51;
+  /* border: 1px solid rgb(60, 35, 35); */
+  border: 1px solid #5e5b51;
   border-radius: 10%;
   margin-left: 240px;
   margin-bottom: 40px;
@@ -91,26 +97,6 @@
   justify-content: space-between;
 }
 
-.circle {
-  display: flex;
-}
-
-.circle div {
-  width: 20px;
-  height: 22px;
-  border-radius: 50%;
-  padding: 5px;
-  margin: 2px;
-}
-
-.circle div:first-child {
-  background-color: rgb(240, 108, 134);
-}
-
-.circle div:last-child {
-  background-color: rgb(233, 75, 233);
-}
-
 .checkbox label {
   font-size: 12px;
   padding-left: 2px;
@@ -119,4 +105,197 @@
 input[type="checkbox"] {
   accent-color: rgb(247, 244, 244);
   border: 1px solid gray;
+}
+
+.main2 {
+  display: grid;
+  /* max-width: 1300px; */
+  margin: 0 auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  gap: 10px;
+  grid-template-areas:
+    "nav nav nav nav"
+    "aside section section  section";
+}
+
+nav {
+  /* background-color: cadetblue; */
+  grid-area: nav;
+  padding: 30px;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+.nav li {
+  list-style-type: none;
+  font-size: 40px;
+}
+
+aside {
+  /* background-color: blanchedalmond; */
+  grid-area: aside;
+  height: auto;
+  line-height: 3;
+  text-align: justify;
+  padding: 30px;
+  padding-bottom: 0;
+}
+
+.aside img {
+  margin-top: 45px;
+  margin-left: 20px;
+  height: 190px;
+  width: 60%;
+}
+
+section {
+  /* background-color: brown; */
+  padding: 20px;
+  height: 60vh;
+  grid-area: section;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* text-align: center; */
+}
+
+.circlecontainer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+}
+
+.box1 {
+  width: 48%;
+  height: 160px;
+  padding: 20px;
+  background-color: #fff9dc;
+  margin: 5px;
+}
+
+.box2 {
+  width: 48%;
+  height: 170px;
+  padding: 20px;
+  background-color: #fff9dc;
+  margin: 5px;
+}
+
+.box3 {
+  width: 48%;
+  height: 160px;
+  padding: 20px;
+  background-color: #fff9dc;
+  margin: 5px;
+}
+
+/* .box4 {
+  width: 48%;
+  height: 160px;
+  padding: 20px;
+  background-color: #fff9dc;
+  margin: 5px;
+} */
+
+.round {
+  display: flex;
+  justify-content: space-between;
+  width: 23%;
+}
+
+.study {
+  width: 25%;
+}
+
+.entertainment {
+  width: 46%;
+}
+
+.fam {
+  width: 26%;
+}
+
+.circle1 {
+  width: 20px;
+  height: 22px;
+  border-radius: 50%;
+  padding: 5px;
+  margin-top: 11px;
+  background-color: rgb(245, 156, 245);
+}
+
+.circle2 {
+  width: 20px;
+  height: 22px;
+  border-radius: 50%;
+  padding: 5px;
+  margin-top: 11px;
+  background-color: rgba(173, 246, 248, 0.759);
+}
+
+.circle3 {
+  width: 20px;
+  height: 22px;
+  border-radius: 50%;
+  padding: 5px;
+  margin-top: 11px;
+  background-color: rgb(249, 159, 177);
+}
+
+.circle4 {
+  width: 20px;
+  height: 22px;
+  border-radius: 50%;
+  padding: 5px;
+  margin-top: 11px;
+  background-color: rgb(211, 240, 159);
+}
+
+.circletask {
+  display: flex;
+}
+
+.circletask div {
+  width: 20px;
+  height: 22px;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 2px;
+}
+
+.circletask div:first-child {
+  background-color: rgba(173, 246, 248, 0.759);
+}
+
+.circletask div:nth-child(2) {
+  background-color: rgb(249, 159, 177);
+}
+
+.circletask div:last-child {
+  background-color: rgb(234, 125, 234);
+}
+
+.circletask2 {
+  display: flex;
+}
+
+.circletask2 div {
+  width: 20px;
+  height: 22px;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 2px;
+}
+
+.circletask2 div:first-child {
+  background-color: rgb(249, 159, 177);
+}
+
+.circletask2 div:last-child {
+  background-color: rgb(234, 125, 234);
 }
