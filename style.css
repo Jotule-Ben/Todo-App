@@ -314,3 +314,12 @@ section {
   justify-content: space-between;
   font-size: 18px;
 }
+
+.cancel button {
+  padding: 8px 30px;
+  background-color: rgb(60, 35, 35);
+  border: 1px solid rgb(60, 35, 35);
+  border-radius: 10%;
+  cursor: pointer;
+  color: #fffdcf;
+}
