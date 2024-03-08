@@ -299,3 +299,18 @@ section {
 .circletask2 div:last-child {
   background-color: rgb(234, 125, 234);
 }
+
+.add {
+  max-width: 800px;
+  margin: auto;
+  height: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10%;
+}
+
+.cancel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
