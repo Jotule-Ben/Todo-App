@@ -392,6 +392,7 @@ section {
   border-radius: 30px;
   /* text-align: center; */
   line-height: 7;
+  margin-top: 80px;
 }
 
 .login input{
