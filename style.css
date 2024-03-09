@@ -424,3 +424,7 @@ section {
   margin-left: 170px;
 }
 
+.login{
+  display: none;
+}
+
