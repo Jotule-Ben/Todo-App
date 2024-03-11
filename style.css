@@ -107,6 +107,10 @@ input[type="checkbox"] {
   border: 1px solid gray;
 }
 
+.MAIN{
+  display: none;
+}
+
 .main2 {
   display: grid;
   /* max-width: 1300px; */
@@ -144,6 +148,14 @@ aside {
   text-align: justify;
   padding: 30px;
   padding-bottom: 0;
+}
+
+aside p{
+  cursor: pointer;
+}
+
+aside .circle1, .circle2, .circle3, .circle4{
+  cursor: pointer;
 }
 
 .aside img {
@@ -308,6 +320,7 @@ section {
   background-color: #ffffff;
   padding: 50px;
   border-radius: 30px;
+  display: none;
 }
 
 .cancel {
@@ -427,5 +440,13 @@ section {
 
 .login{
   display: none;
+}
+
+#add{
+  cursor: pointer;
+}
+
+.linethrough{
+  text-decoration: line-through;
 }
 
