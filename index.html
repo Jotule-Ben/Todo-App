@@ -48,16 +48,165 @@
 
     <div class="login">
       <div class="email">
-      <label for="">Email</label><br>
-      <input type="email">
+        <label for="">Email</label><br />
+        <input type="email" id="email" />
+      </div>
+
+      <div class="password">
+        <label for="">Password</label><br />
+        <input type="password" id="password" />
+      </div>
+
+      <button id="login">Login</button>
     </div>
 
-    <div class="password">
-    <label for="">Password</label><br>
-    <input type="password">
-  </div>
+    <div class="MAIN">
+      <div class="main2">
+        <nav class="nav">
+          <ul>
+            <li>todo</li>
+            <li id="add">+</li>
+          </ul>
+        </nav>
 
-  <button>Login</button>
+        <aside class="aside">
+          <div class="round">
+            <div class="circle1"></div>
+            <p>work</p>
+          </div>
+
+          <div class="round study">
+            <div class="circle2"></div>
+            <p>study</p>
+          </div>
+
+          <div class="round entertainment">
+            <div class="circle3"></div>
+            <p>entertainment</p>
+          </div>
+
+          <div class="round fam">
+            <div class="circle4"></div>
+            <p>family</p>
+          </div>
+          <input type="checkbox" name="" id="" /><span>Hide Done Tasks</span
+          ><br />
+          <img src="./assets/img2.png" alt="img2" />
+        </aside>
+        <section id="boxes">
+          <div class="box1">
+            <h1 id="taskTitle">The first task title</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
+              dicta dolorum molestiae error numquam quisquam sapiente magnam.
+            </p>
+            <div class="circlecontainer">
+              <div class="circletask">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div>
+                <input type="checkbox" name="" id="checkbox" /><label for=""
+                  >Done</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="box2">
+            <h1 id="taskTitle2">The second task title</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Excepturi qui, labore veritatis harum voluptatibus inventore
+              laudantium error nihil aspernatur atque, quae fuga illum cumque
+              unde?
+            </p>
+            <div class="circlecontainer">
+              <div class="circle"></div>
+              <div>
+                <input type="checkbox" name="" id="checkbox2" /><label for=""
+                  >Done</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="box3">
+            <h1 id="taskTitle3">The third task title</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="circlecontainer">
+              <div class="circletask2">
+                <div></div>
+                <div></div>
+              </div>
+              <div>
+                <input type="checkbox" name="" id="checkbox3" /><label for=""
+                  >Done</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="box4">
+            <h1>The fourth task title</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="circlecontainer">
+            <div class="circle">
+            <div></div>
+            <div></div>
+          </div>
+          <div>
+            <input type="checkbox" name="" id=""><label for="">Done</label></div>
+          </div>
+          </div> -->
+        </section>
+      </div>
+    </div>
+
+
+    
+    <div class="add">
+      <div class="cancel">
+        <p>Cancel</p>
+        <button>Add</button>
+      </div>
+      <div class="title">
+        <label for="">Title</label> <br />
+        <input type="text" placeholder="add a title ..." />
+      </div>
+
+      <div class="description">
+        <label for="">Description</label> <br />
+        <textarea name="" id="" cols="30" rows="10">
+add a description ...</textarea
+        >
+      </div>
+
+      <div class="tag">
+        <h3>Tags</h3>
+        <div class="belowtag">
+          <div class="bt">
+            <div class="circle1 circle"></div>
+            <p>work</p>
+          </div>
+
+          <div class="bt">
+            <div class="circle2 circle"></div>
+            <p>study</p>
+          </div>
+
+          <div class="bt">
+            <div class="circle3 circle"></div>
+            <p style="margin-left: 10px">entertainment</p>
+          </div>
+
+          <div class="bt">
+            <div class="circle4 circle"></div>
+            <p>family</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
