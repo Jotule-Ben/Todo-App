@@ -59,7 +59,29 @@ $(document).ready(function () {
   //   $("#email").val("");
   // });
 
-  
+  $("#login").click(function () {
+    // $(".MAIN").show();
+    // $(".login").hide();
+    if (userEmail.value == "" || userPassword.value == "") {
+      $("#email").addClass("validate");
+      $("#password").addClass("validate");
+      console.log(userEmail.value, userPassword.value, "Wrong!");
+    } else if (
+      userEmail.value == userDetails.email &&
+      userPassword.value == userDetails.password
+    ) {
+      $("#email").addClass("unValidated");
+      $("#password").addClass("unValidated");
+      console.log(userEmail.value);
+      console.log(userPassword.value);
+      console.log(userDetails.email);
+      console.log(userDetails.password, "correct!");
+      $(".MAIN").show();
+      $(".login").hide();
+    } else {
+      return;
+    }
+  });
 
   $("#plus").click(function () {
     $(".hiddenAside").show();
