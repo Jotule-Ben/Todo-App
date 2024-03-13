@@ -1,34 +1,70 @@
-let userEmail = document.getElementById("#email");
-let userPassword = document.getElementById("#password");
+let userName = document.getElementById("name");
+let userEmail = document.getElementById("email");
+let userPassword = document.getElementById("password");
+
+let userDetails = {
+  email: "matthewbenedicta2007@gmail.com",
+  password: 6270,
+};
+
+// console.log(userDetails.email, userDetails.password);
 
 $(document).ready(function () {
+  $("#name").addClass("unValidated");
+  $("#suPassword").addClass("unValidated");
+  $("#suEmail").addClass("unValidated");
+  $("#email").addClass("unValidated");
+  $("#password").addClass("unValidated");
   $(".getStarted").click(function () {
-    $(".login").show();
+    $(".signUp").show();
     $("#landingPage").hide();
   });
 
-  $("#login").click(function (e) {
-    e.preventDefault();
-
-    let email = $("#email").val();
-    let password = $("#password").val();
-
-    let formData = {
-      email: email,
-      password: password,
-    };
-
-    localStorage.setItem("formData", JSON.stringify(formData));
-
-    console.log(localStorage);
-
-    $("#password").val("");
-    $("#email").val("");
+  $("#signUp").click(function () {
+    if (
+      userEmail.value == "" ||
+      userPassword.value == "" ||
+      userName.value == ""
+    ) {
+      $("#suEmail").addClass("validate");
+      $("#suPassword").addClass("validate");
+      $("#name").addClass("validate");
+      console.log(userEmail.value, userPassword.value, "Wrong!");
+      return;
+    } else {
+      $("#name").addClass("unValidated");
+      $("#suEmail").addClass("unValidated");
+      $("#suPassword").addClass("unValidated");
+      $(".login").show();
+      $(".signUp").hide();
+    }
   });
 
-  $("#login").click(function () {
-    $(".MAIN").show();
-    $(".login").hide();
+  // $("#login").click(function (e) {
+  //   e.preventDefault();
+
+  //   let email = $("#email").val();
+  //   let password = $("#password").val();
+
+  //   let formData = {
+  //     email: email,
+  //     password: password,
+  //   };
+
+  //   localStorage.setItem("formData", JSON.stringify(formData));
+
+  //   console.log(localStorage);
+
+  //   $("#password").val("");
+  //   $("#email").val("");
+  // });
+
+  
+
+  $("#plus").click(function () {
+    $(".hiddenAside").show();
+    $("#boxes").show();
+    $("#plus").hide();
   });
 
   $("#checkbox").click(function () {
@@ -45,12 +81,10 @@ $(document).ready(function () {
 
   document.getElementById("add").addEventListener("click", function () {
     $(".add").show();
-    $(".MAIN").hide();
   });
 
   $("#cancelp").click(function () {
     $(".add").hide();
-    $(".MAIN").show();
   });
 });
 
