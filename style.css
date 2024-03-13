@@ -316,14 +316,17 @@ section {
 }
 
 .add {
-  max-width: 900px;
-  margin: auto;
+  position: absolute;
+  margin: 5% 25%;
+  width: 50%;
+  top: 0;
   height: auto;
   /* background-color: red; */
   background-color: #ffffff;
   padding: 50px;
   border-radius: 30px;
   display: none;
+  box-shadow: 0 0 15px 1px #08080861;
 }
 
 .cancel {
@@ -386,7 +389,7 @@ section {
 .belowtag {
   display: flex;
   justify-content: space-between;
-  width: 65%;
+  width: 85%;
 }
 
 .bt {
@@ -410,7 +413,7 @@ section {
   background-color: #fafafd;
   margin-bottom: 20px;
   border-radius: 30px;
-  /* text-align: center; */
+  box-shadow: 0 0 15px 1px #08080861;
   line-height: 7;
   margin-top: 80px;
 }
@@ -418,7 +421,7 @@ section {
 .login input {
   padding: 20px;
   background-color: #f2f1f9;
-  border: 1px solid #f2f1f9;
+  /* border: 1px solid #f2f1f9; */
   border-radius: 10px;
   width: 100%;
   font-size: 18px;
@@ -445,7 +448,54 @@ section {
   margin-left: 170px;
 }
 
-.login {
+.signUp {
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  background-color: #fafafd;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 15px 1px #08080861;
+  line-height: 3;
+  margin-top: 80px;
+}
+
+.signUp input {
+  padding: 10px;
+  background-color: #f2f1f9;
+  /* border: 1px solid #f2f1f9; */
+  border-radius: 10px;
+  width: 100%;
+  font-size: 18px;
+}
+
+#name {
+  line-height: 2;
+  margin-bottom: 40px;
+}
+
+#suEmail {
+  line-height: 2;
+  margin-bottom: 40px;
+}
+
+#suPassword {
+  line-height: 2;
+}
+
+.signUp button {
+  width: 100%;
+  padding: 10px 25px;
+  font-size: 18px;
+  background-color: khaki;
+  border: 1px solid khaki;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 70px;
+}
+
+.login,
+.signUp {
   display: none;
 }
 
@@ -455,4 +505,36 @@ section {
 
 .linethrough {
   text-decoration: line-through;
+}
+
+.hiddenAside {
+  display: none;
+}
+
+#boxes {
+  display: none;
+}
+
+#plus {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  font-size: 20px;
+}
+
+#plus p {
+  font-size: 30px;
+}
+
+#plus span {
+  padding-top: 15px;
+}
+
+.unValidated {
+  border: 1px solid #f2f1f9;
+}
+
+.validate {
+  border: 1px solid red;
+  background-color: crimson;
 }
