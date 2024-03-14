@@ -1,11 +1,9 @@
 let userName = document.getElementById("name");
 let userEmail = document.getElementById("email");
 let userPassword = document.getElementById("password");
-
-let userDetails = {
-  email: "matthewbenedicta2007@gmail.com",
-  password: 6270,
-};
+let userSignUpEmail = document.getElementById("suEmail");
+let userSignUpPassword = document.getElementById("suPassword");
+let categoryInput = document.getElementById("categoryInput")
 
 // console.log(userDetails.email, userDetails.password);
 
@@ -22,19 +20,29 @@ $(document).ready(function () {
 
   $("#signUp").click(function () {
     if (
-      userEmail.value == "" ||
-      userPassword.value == "" ||
+      userSignUpEmail.value == "" ||
+      userSignUpPassword.value == "" ||
       userName.value == ""
     ) {
       $("#suEmail").addClass("validate");
       $("#suPassword").addClass("validate");
       $("#name").addClass("validate");
-      console.log(userEmail.value, userPassword.value, "Wrong!");
-      return;
-    } else {
+      console.log(userSignUpEmail);
+      console.log(userSignUpPassword);
+      console.log(userName);
+    } else if (
+      userSignUpEmail.value != "" &&
+      userSignUpPassword.value != "" &&
+      userName.value != ""
+    ) {
       $("#name").addClass("unValidated");
       $("#suEmail").addClass("unValidated");
       $("#suPassword").addClass("unValidated");
+      console.log(
+        userSignUpEmail.value,
+        userSignUpPassword.value,
+        userName.value
+      );
       $(".login").show();
       $(".signUp").hide();
     }
@@ -60,34 +68,82 @@ $(document).ready(function () {
   // });
 
   $("#login").click(function () {
-    // $(".MAIN").show();
-    // $(".login").hide();
     if (userEmail.value == "" || userPassword.value == "") {
       $("#email").addClass("validate");
       $("#password").addClass("validate");
       console.log(userEmail.value, userPassword.value, "Wrong!");
     } else if (
-      userEmail.value == userDetails.email &&
-      userPassword.value == userDetails.password
+      userEmail.value == userSignUpEmail.value &&
+      userPassword.value == userSignUpPassword.value
     ) {
       $("#email").addClass("unValidated");
       $("#password").addClass("unValidated");
-      console.log(userEmail.value);
-      console.log(userPassword.value);
-      console.log(userDetails.email);
-      console.log(userDetails.password, "correct!");
+      console.log("correct!");
       $(".MAIN").show();
       $(".login").hide();
+    } else if (userEmail.value !== userSignUpEmail.value) {
+      $(".enterEmail")
+        .html("<p>" + "Enter your correct Email" + "</p>")
+        .css({ color: "red", "font-size": "12px" });
+    } else if (userPassword.value !== userSignUpPassword.value) {
+      $(".enterPassword")
+        .html("<p>" + "Enter your correct password" + "</p>")
+        .css({ color: "red", "font-size": "12px" });
     } else {
-      return;
+      $(".enterEmail").html("");
+      $(".enterPassword").html("");
     }
   });
 
   $("#plus").click(function () {
-    $(".hiddenAside").show();
-    $("#boxes").show();
+    // $(".hiddenAside").show();
+    // $("#boxes").show();
+    $(".addCategory").show();
     $("#plus").hide();
   });
+
+   $("#acCancelp").click(function () {
+     $(".addCategory").hide();
+   });
+
+   $("#addCategory").click(function(){
+    if (categoryInput.value == "") {
+      return;
+    } else if (categoryInput.value == "work") {
+      $(".circle1").show();
+      $("#work").show();
+      $("#hideDoneTasks").show();
+      $("#hideDoneTasksSpan").show();
+      $(".addCategory").hide();
+      $("#plus").show();
+      console.log(categoryInput.value);
+    } else if (categoryInput.value == "study") {
+      $(".circle2").show();
+      $("#study").show();
+      $("#hideDoneTasks").show();
+      $("#hideDoneTasksSpan").show();
+      $(".addCategory").hide();
+      $("#plus").show();
+      console.log(categoryInput.value);
+    } else if (categoryInput.value == "entertainment") {
+      $(".circle3").show();
+      $("#entertainment").show();
+      $("#hideDoneTasks").show();
+      $("#hideDoneTasksSpan").show();
+      $(".addCategory").hide();
+      $("#plus").show();
+      console.log(categoryInput.value);
+    } else if (categoryInput.value == "family") {
+      $(".circle4").show();
+      $("#family").show();
+      $("#hideDoneTasks").show();
+      $("#hideDoneTasksSpan").show();
+      $(".addCategory").hide();
+      $("#plus").show();
+      console.log(categoryInput.value);
+    }
+   });
+   
 
   $("#checkbox").click(function () {
     $("#taskTitle").toggleClass("linethrough");
@@ -118,3 +174,9 @@ $(document).ready(function () {
 //     userPassword.style.borderColor = "red";
 //   }
 // });
+
+////////////////////////////////////////////////////////////
+
+// let allButtons = document.getElementsByTagName("button"); 
+
+// console.log(allButtons);

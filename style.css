@@ -507,9 +507,42 @@ section {
   text-decoration: line-through;
 }
 
-.hiddenAside {
+/* .hiddenAside {
+  display: none;
+} */
+
+.hiddenAside img{
   display: none;
 }
+
+#hideDoneTasks{
+  display: none;
+}
+
+#hideDoneTasksSpan{
+  display: none;
+}
+
+.circle1 , .circle2, .circle3, .circle4{
+  display: none;
+}
+
+#work{
+  display: none;
+}
+
+#study{
+display: none;
+}
+
+#entertainment{
+display: none;
+}
+
+#family{
+  display: none;
+}
+
 
 #boxes {
   display: none;
@@ -538,3 +571,59 @@ section {
   border: 1px solid red;
   background-color: crimson;
 }
+
+.addCategory {
+  position: absolute;
+  margin: 10% 25%;
+  width: 50%;
+  top: 0;
+  height: auto;
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 30px;
+  display: none;
+  box-shadow: 0 0 15px 1px #08080861;
+}
+
+
+.acCancel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+#acCancelp {
+  cursor: pointer;
+}
+
+.acCancel button {
+  padding: 8px 30px;
+  background-color: rgb(74, 66, 66);
+  background:linear-gradient(rgb(247, 214, 247),
+rgb(247, 202, 212)
+, rgb(246, 206, 246) );
+  /* border: 1px solid rgb(60, 35, 35); */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fffdcf;
+}
+
+.category {
+  line-height: 2.5;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.category input {
+  padding: 12px;
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+  border: 1px solid rgb(247, 247, 247);
+  border-radius: 10px;
+}
+
+.title input::placeholder {
+  font-size: 16px;
+}
+
