@@ -3,9 +3,9 @@ let userEmail = document.getElementById("email");
 let userPassword = document.getElementById("password");
 let userSignUpEmail = document.getElementById("suEmail");
 let userSignUpPassword = document.getElementById("suPassword");
-let categoryInput = document.getElementById("categoryInput")
-
-// console.log(userDetails.email, userDetails.password);
+let categoryInput = document.getElementById("categoryInput");
+let title = document.getElementById("title");
+let description = document.getElementById("description");
 
 $(document).ready(function () {
   $("#name").addClass("unValidated");
@@ -102,11 +102,12 @@ $(document).ready(function () {
     $("#plus").hide();
   });
 
-   $("#acCancelp").click(function () {
-     $(".addCategory").hide();
-   });
+  $("#acCancelp").click(function () {
+    $(".addCategory").hide();
+    $("#plus").show();
+  });
 
-   $("#addCategory").click(function(){
+  $("#addCategory").click(function () {
     if (categoryInput.value == "") {
       return;
     } else if (categoryInput.value == "work") {
@@ -142,8 +143,7 @@ $(document).ready(function () {
       $("#plus").show();
       console.log(categoryInput.value);
     }
-   });
-   
+  });
 
   $("#checkbox").click(function () {
     $("#taskTitle").toggleClass("linethrough");
@@ -157,26 +157,27 @@ $(document).ready(function () {
     $("#taskTitle3").toggleClass("linethrough");
   });
 
-  document.getElementById("add").addEventListener("click", function () {
+  $("#Task").click(function () {
     $(".add").show();
+    // console.log(title.value, description.value);
+  });
+
+  $("#addTask").click(function () {
+    if (title.value != "" && description.value != "") {
+      // $("#taskTitle").html(title.value);
+      // $("#des").html(description.value);
+      // console.log($("#taskTitle").val());
+      // console.log($("#des").val());
+      $(".box1").show();
+      $(".box2").show();
+      $(".box3").show();
+      $(".add").hide();
+    } else {
+      return;
+    }
   });
 
   $("#cancelp").click(function () {
     $(".add").hide();
   });
 });
-
-// document.getElementById("login").addEventListener("click", function () {
-//   let input = userEmail.value;
-//   let inputs = userPassword.value;
-//   if (inputs == "" && input == "") {
-//     userEmail.style.borderColor = "red";
-//     userPassword.style.borderColor = "red";
-//   }
-// });
-
-////////////////////////////////////////////////////////////
-
-// let allButtons = document.getElementsByTagName("button"); 
-
-// console.log(allButtons);
