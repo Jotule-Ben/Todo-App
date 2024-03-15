@@ -179,13 +179,6 @@ $(document).ready(function () {
     localStorage.setItem("myFormData", JSON.stringify(existingModalDetails));
     if (title.value != "" && description.value != ""){
       if (title.value != "" && description.value != "") {
-        // console.log(existingModalDetails[0].title);
-        // console.log(existingModalDetails[0].description);
-        // console.log(existingModalDetails[1].title);
-        // console.log(existingModalDetails[1].description);
-        // console.log(existingModalDetails[2].title);
-        // console.log(existingModalDetails[2].description);
-
         $("#taskTitle").html("<p>" + existingModalDetails[0].title + "</p>");
         $("#des").html("<p>" + existingModalDetails[0].description + "</p>");
         $(".box1").show();
@@ -194,6 +187,9 @@ $(document).ready(function () {
         $(".add").hide();
         $("#title").val("");
         $("#description").val("");
+        $(".bt1").click(function(){
+          $("#catDiv1").show().addClass("bt1");
+        })
       }
       if (box1) {
         $("#taskTitle2").html("<p>" + existingModalDetails[1].title + "</p>");

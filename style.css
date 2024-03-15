@@ -283,7 +283,7 @@ section {
   margin: 2px;
 }
 
-.circletask div:first-child {
+/* .circletask div:first-child {
   background-color: rgba(173, 246, 248, 0.759);
 }
 
@@ -293,7 +293,7 @@ section {
 
 .circletask div:last-child {
   background-color: rgb(234, 125, 234);
-}
+} */
 
 .circletask2 {
   display: flex;
@@ -651,8 +651,41 @@ section {
   display: none;
 }
 
+.cat{
+display: none;
+}
 
-@media screen and (max-width: 320px) {
-  
+
+@media screen and (min-width: 320px) {
+#landingPage {
+  max-width: 300px;
+  padding-top: 50px;
+}
+
+.p {
+  font-size: 15px;
+}
+
+#landingPage button {
+  font-size: 15px;
+  margin-left: 90px;
+  margin-bottom: 20px;
+}
+
+.textbelow {
+  line-height: 2;
+  background-color: lemonchiffon;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.imgsection {
+  height: 120px;
+}
+
+.imgsection img {
+  height: 100%;
+  width: 100%;
+}
 }
 
