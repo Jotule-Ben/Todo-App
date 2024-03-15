@@ -579,6 +579,7 @@ section {
 }
 
 #plus span {
+  text-wrap: nowrap;
   padding-top: 10px;
 }
 
@@ -655,7 +656,7 @@ section {
   display: none;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 320px) {
   #landingPage {
     max-width: 300px;
     padding-top: 50px;
@@ -725,6 +726,61 @@ section {
 
 .login button {
   margin-left: 50px;
+}
+
+.main2 {
+  display: grid;
+  /* max-width: 1300px; */
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  gap: 10px;
+  grid-template-areas:
+    "nav nav nav"
+    "aside section section";
+}
+
+
+
+.nav ul {
+  padding-left: 5px;
+}
+
+.nav li {
+  font-size: 30px;
+}
+
+
+#plus {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  font-size: 18px;
+}
+
+#plus span {
+  text-wrap: nowrap;
+  padding: 2px;
+  padding-top: 10px;
+}
+
+
+
+
+.addCategory {
+  margin: 10%;
+  width: 80%;
+  padding: 20px;
+  padding-top: 30px;
+}
+
+.acCancel {
+  font-size: 15px;
+}
+
+
+.acCancel button {
+  padding: 5px 20px;
 }
 
 
