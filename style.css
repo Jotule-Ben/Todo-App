@@ -784,4 +784,45 @@ section {
 }
 
 
+
+
+
+.add {
+  margin: 10%;
+  width: 80%;
+  padding: 20px;
+  padding-top: 30px;
+  margin-bottom: 10px;
+}
+
+.cancel {
+  font-size: 15px;
+}
+
+.cancel button {
+  padding: 5px 20px;
+}
+
+.add label {
+  font-size: 20px;
+  color: #3f413f;
+  font-weight: 600;
+}
+
+
+.title {
+    line-height: 1.5;
+}
+
+.description {
+    line-height: 1.5;
+}
+
+#description {
+  padding: 10px;
+  padding-bottom: 60px;
+  margin-bottom: 10px;
+}
+
+
 }
