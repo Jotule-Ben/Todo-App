@@ -504,6 +504,10 @@ section {
   cursor: pointer;
 }
 
+#Task {
+  cursor: pointer;
+}
+
 .linethrough {
   text-decoration: line-through;
 }
@@ -527,7 +531,11 @@ section {
 .circle1,
 .circle2,
 .circle3,
-.circle4 {
+.circle4,
+.bt1,
+.bt2,
+.bt3,
+.bt4 {
   display: none;
 }
 
@@ -638,3 +646,13 @@ section {
 .title input::placeholder {
   font-size: 16px;
 }
+
+#tagheading{
+  display: none;
+}
+
+
+@media screen and (max-width: 320px) {
+  
+}
+
