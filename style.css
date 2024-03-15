@@ -647,45 +647,63 @@ section {
   font-size: 16px;
 }
 
-#tagheading{
+#tagheading {
   display: none;
 }
 
-.cat{
-display: none;
+.cat {
+  display: none;
 }
-
 
 @media screen and (min-width: 320px) {
-#landingPage {
-  max-width: 300px;
-  padding-top: 50px;
-}
+  #landingPage {
+    max-width: 300px;
+    padding-top: 50px;
+  }
 
-.p {
-  font-size: 15px;
-}
+  .p {
+    font-size: 15px;
+  }
 
-#landingPage button {
-  font-size: 15px;
-  margin-left: 90px;
-  margin-bottom: 20px;
-}
+  #landingPage button {
+    font-size: 15px;
+    margin-left: 90px;
+    margin-bottom: 20px;
+  }
 
-.textbelow {
-  line-height: 2;
-  background-color: lemonchiffon;
-  padding: 20px;
-  margin-bottom: 20px;
-}
+  .textbelow {
+    line-height: 2;
+    background-color: lemonchiffon;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
 
-.imgsection {
-  height: 120px;
-}
+  .imgsection {
+    height: 120px;
+  }
 
-.imgsection img {
-  height: 100%;
-  width: 100%;
-}
-}
+  .imgsection img {
+    height: 100%;
+    width: 100%;
+  }
 
+  .signUp {
+    max-width: 250px;
+    padding: 30px;
+    line-height: 2;
+    margin-top: 40px;
+  }
+
+  #name {
+    margin-bottom: 30px;
+  }
+
+  #suEmail {
+    margin-bottom: 30px;
+  }
+
+  .signUp button {
+    margin-top: 50px;
+  }
+  
+}
