@@ -6,8 +6,8 @@ let userSignUpPassword = document.getElementById("suPassword");
 let categoryInput = document.getElementById("categoryInput");
 let title = document.getElementById("title");
 let description = document.getElementById("description");
-let box1 = document.getElementById("box1");
-let box2 = document.getElementById("box2");
+let box1 = document.getElementsByClassName("box1");
+let box2 = document.getElementsByClassName("box2");
 
 $(document).ready(function () {
   $("#name").addClass("unValidated");
@@ -30,12 +30,6 @@ $(document).ready(function () {
       $("#suEmail").addClass("validate");
       $("#suPassword").addClass("validate");
       $("#name").addClass("validate");
-    } else if (userName.value != "") {
-      $("#name").addClass("unValidated");
-    } else if (userSignUpEmail.value != "") {
-      $("#suEmail").addClass("unValidated");
-    } else if (userSignUpPassword.value != "") {
-      $("#suPassword").addClass("unValidated");
     } else if (
       userSignUpEmail.value != "" &&
       userSignUpPassword.value != "" &&
@@ -100,7 +94,6 @@ $(document).ready(function () {
   });
 
   $("#plus").click(function () {
-    // $(".hiddenAside").show();
     // $("#boxes").show();
     $(".addCategory").show();
     $("#plus").hide();
@@ -121,6 +114,8 @@ $(document).ready(function () {
       $("#hideDoneTasksSpan").show();
       $(".addCategory").hide();
       $("#plus").show();
+      $("#tagheading").show();
+      $(".bt1").show();
     } else if (categoryInput.value == "study") {
       $(".circle2").show();
       $("#study").show();
@@ -128,6 +123,8 @@ $(document).ready(function () {
       $("#hideDoneTasksSpan").show();
       $(".addCategory").hide();
       $("#plus").show();
+      $("#tagheading").show();
+      $(".bt2").show();
     } else if (categoryInput.value == "entertainment") {
       $(".circle3").show();
       $("#entertainment").show();
@@ -135,6 +132,8 @@ $(document).ready(function () {
       $("#hideDoneTasksSpan").show();
       $(".addCategory").hide();
       $("#plus").show();
+      $("#tagheading").show();
+      $(".bt3").show();
     } else if (categoryInput.value == "family") {
       $(".circle4").show();
       $("#family").show();
@@ -142,6 +141,8 @@ $(document).ready(function () {
       $("#hideDoneTasksSpan").show();
       $(".addCategory").hide();
       $("#plus").show();
+      $("#tagheading").show();
+      $(".bt4").show();
     }
   });
 
@@ -159,31 +160,60 @@ $(document).ready(function () {
 
   $("#Task").click(function () {
     $(".add").show();
-    // console.log(title.value, description.value);
   });
 
   $("#addTask").click(function () {
-    if (title.value != "" && description.value != "") {
-      $("#taskTitle").html("<p>" + title.value + "</p>");
-      $("#des").html("<p>" + description.value + "</p>");
-      // console.log($("#taskTitle").val());
-      // console.log($("#des").val());
-      $(".box1").show();
-      // $(".box2").show();
-      // $(".box3").show();
-      $(".add").hide();
-    } else if (box1) {
-      $("#taskTitle2").html("<p>" + title.value + "</p>");
-      $("#des2").html("<p>" + description.value + "</p>");
-      $(".box1").show();
-      $(".box2").show();
-    } else if (box2 && box3) {
-      $("#taskTitle3").html("<p>" + title.value + "</p>");
-      $("#des3").html("<p>" + description.value + "</p>");
-      $(".box1").show();
-      $(".box2").show();
-      $(".box3").show();
-    } else {
+    let addTitle = $("#title").val();
+    let addDescription = $("#description").val();
+
+    let existingModalDetails =
+      JSON.parse(localStorage.getItem("myFormData")) || [];
+
+    let modalData = {
+      title: addTitle,
+      description: addDescription,
+    };
+
+    existingModalDetails.push(modalData);
+
+    localStorage.setItem("myFormData", JSON.stringify(existingModalDetails));
+    if (title.value != "" && description.value != ""){
+      if (title.value != "" && description.value != "") {
+        // console.log(existingModalDetails[0].title);
+        // console.log(existingModalDetails[0].description);
+        // console.log(existingModalDetails[1].title);
+        // console.log(existingModalDetails[1].description);
+        // console.log(existingModalDetails[2].title);
+        // console.log(existingModalDetails[2].description);
+
+        $("#taskTitle").html("<p>" + existingModalDetails[0].title + "</p>");
+        $("#des").html("<p>" + existingModalDetails[0].description + "</p>");
+        $(".box1").show();
+        // $(".box2").show();
+        // $(".box3").show();
+        $(".add").hide();
+        $("#title").val("");
+        $("#description").val("");
+      }
+      if (box1) {
+        $("#taskTitle2").html("<p>" + existingModalDetails[1].title + "</p>");
+        $("#des2").html("<p>" + existingModalDetails[1].description + "</p>");
+        $(".box1").show();
+        $(".box2").show();
+        $("#title").val("");
+        $("#description").val("");
+      }
+      if (box1 && box2) {
+        $("#taskTitle3").html("<p>" + existingModalDetails[2].title + "</p>");
+        $("#des3").html("<p>" + existingModalDetails[2].description + "</p>");
+        $(".box1").show();
+        $(".box2").show();
+        $(".box3").show();
+        $("#title").val("")
+        $("#description").val("")
+      }
+    }
+    else {
       return;
     }
   });
@@ -192,3 +222,4 @@ $(document).ready(function () {
     $(".add").hide();
   });
 });
+
