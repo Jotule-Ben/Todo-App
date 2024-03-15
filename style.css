@@ -705,5 +705,27 @@ section {
   .signUp button {
     margin-top: 50px;
   }
+
   
+.login {
+    max-width: 250px;
+    padding: 30px;
+    line-height: 2;
+    margin-top: 40px;
+}
+
+.login input {
+  padding: 20px;
+  background-color: #f2f1f9;
+  /* border: 1px solid #f2f1f9; */
+  border-radius: 10px;
+  width: 100%;
+  font-size: 18px;
+}
+
+.login button {
+  margin-left: 50px;
+}
+
+
 }
