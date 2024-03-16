@@ -235,6 +235,30 @@ $(document).ready(function () {
     } else {
       return;
     }
+
+    $(".editTask1").click(function () {
+      $(".add").show();
+    });
+
+    $(".editTask2").click(function () {
+      $(".add").show();
+    });
+
+    $(".editTask3").click(function () {
+      $(".add").show();
+    });
+
+    $(".delete1").click(function () {
+      $(".box1").hide();
+    });
+
+    $(".delete2").click(function () {
+      $(".box2").hide();
+    });
+
+    $(".delete3").click(function () {
+      $(".box3").hide();
+    });
   });
 
   $("#cancelp").click(function () {
