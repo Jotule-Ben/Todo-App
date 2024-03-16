@@ -899,6 +899,14 @@ section {
     width: 10%;
     height: 18px;
   }
+
+  .bt1,
+.bt2,
+.bt3,
+.bt4{
+  display: block;
+}
+
 }
 
 @media screen and (max-width: 425px) {
@@ -1052,8 +1060,14 @@ section {
     padding-bottom: 10px;
   }
 
+  .bt1,
+.bt2,
+.bt3,
+.bt4{
+  display: block;
 }
 
+}
 
 @media screen and (max-width: 375px) {
 #landingPage {
@@ -1083,5 +1097,50 @@ section {
     font-size: 15px;
     width: 90%;
 }
+
+}
+
+@media screen and (max-width: 768px) {
+  
+  
+.round {
+    width: 50%;
+}
+
+  #hideDoneTasksSpan {
+    padding-left: 2px;
+    margin-top: -20px;
+    font-size: 15px;
+  }
+
+  
+  .entertainment {
+    width: 95%;
+  }
+
+ 
+  .add {
+    margin: 10%;
+    width: 80%;
+    padding: 30px;
+    padding-top: 30px;
+  }
+
+
+  #tagheading {
+    font-size: 18px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .belowtag {
+    font-size: 15px;
+    width: 90%;
+  }
+
+  
+  .bt4 {
+    margin-left: 50px;
+  }
 
 }
