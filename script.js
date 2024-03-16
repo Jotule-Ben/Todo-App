@@ -112,37 +112,45 @@ $(document).ready(function () {
       $("#work").show();
       $("#hideDoneTasks").show();
       $("#hideDoneTasksSpan").show();
+      $("#img").show();
       $(".addCategory").hide();
       $("#plus").show();
       $("#tagheading").show();
       $(".bt1").show();
+      $("#categoryInput").val("");
     } else if (categoryInput.value == "study") {
       $(".circle2").show();
       $("#study").show();
       $("#hideDoneTasks").show();
       $("#hideDoneTasksSpan").show();
+      $("#img").show();
       $(".addCategory").hide();
       $("#plus").show();
       $("#tagheading").show();
       $(".bt2").show();
+      $("#categoryInput").val("");
     } else if (categoryInput.value == "entertainment") {
       $(".circle3").show();
       $("#entertainment").show();
       $("#hideDoneTasks").show();
       $("#hideDoneTasksSpan").show();
+      $("#img").show();
       $(".addCategory").hide();
       $("#plus").show();
       $("#tagheading").show();
       $(".bt3").show();
+      $("#categoryInput").val("");
     } else if (categoryInput.value == "family") {
       $(".circle4").show();
       $("#family").show();
       $("#hideDoneTasks").show();
       $("#hideDoneTasksSpan").show();
+      $("#img").show();
       $(".addCategory").hide();
       $("#plus").show();
       $("#tagheading").show();
       $(".bt4").show();
+      $("#categoryInput").val("");
     }
   });
 
@@ -157,6 +165,22 @@ $(document).ready(function () {
   $("#checkbox3").click(function () {
     $("#taskTitle3").toggleClass("linethrough");
   });
+
+  ////////////// hide and show tasks
+  // $("#hideDoneTasks").click(function () {
+  //   if ($("#taskTitle").toggleClass("linethrough")) {
+  //     $(".box1").hide();
+  //     $(".box1").show();
+  //   }else if (!$("#taskTitle").toggleClass("linethrough")){
+  //        $(".box1").show();
+  //   }
+  //   // if ($("#taskTitle2").toggleClass("linethrough")) {
+  //   //   $(".box2").addClass("hide");
+  //   // }
+  //   // if ($("#taskTitle3").toggleClass("linethrough")) {
+  //   //   $(".box3").addClass("hide");
+  //   // }
+  // });
 
   $("#Task").click(function () {
     $(".add").show();
@@ -177,7 +201,7 @@ $(document).ready(function () {
     existingModalDetails.push(modalData);
 
     localStorage.setItem("myFormData", JSON.stringify(existingModalDetails));
-    if (title.value != "" && description.value != ""){
+    if (title.value != "" && description.value != "") {
       if (title.value != "" && description.value != "") {
         $("#taskTitle").html("<p>" + existingModalDetails[0].title + "</p>");
         $("#des").html("<p>" + existingModalDetails[0].description + "</p>");
@@ -187,9 +211,9 @@ $(document).ready(function () {
         $(".add").hide();
         $("#title").val("");
         $("#description").val("");
-        $(".bt1").click(function(){
+        $(".bt1").click(function () {
           $("#catDiv1").show().addClass("bt1");
-        })
+        });
       }
       if (box1) {
         $("#taskTitle2").html("<p>" + existingModalDetails[1].title + "</p>");
@@ -205,11 +229,10 @@ $(document).ready(function () {
         $(".box1").show();
         $(".box2").show();
         $(".box3").show();
-        $("#title").val("")
-        $("#description").val("")
+        $("#title").val("");
+        $("#description").val("");
       }
-    }
-    else {
+    } else {
       return;
     }
   });
@@ -218,4 +241,3 @@ $(document).ready(function () {
     $(".add").hide();
   });
 });
-
