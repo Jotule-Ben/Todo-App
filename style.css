@@ -516,7 +516,7 @@ section {
   display: none;
 } */
 
-.hiddenAside img {
+#img {
   display: none;
 }
 
@@ -700,6 +700,11 @@ section {
   .bt4 {
     margin-left: 50px;
   }
+
+  
+  #img{
+    height: 100px;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -853,6 +858,11 @@ section {
     font-size: 18px;
     padding-bottom: 10px;
   }
+
+  
+  #img{
+    height: 90px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -896,6 +906,10 @@ section {
 
   .fam {
     width: 55%;
+  }
+  
+  #img{
+    height: 80px;
   }
 }
 
@@ -1148,5 +1162,9 @@ section {
   .circle {
     width: 10%;
     height: 8px;
+  }
+
+  #img{
+    height: 70px;
   }
 }
