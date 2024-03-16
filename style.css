@@ -842,11 +842,9 @@ section {
     font-size: 11px;
   }
 
+  
   section {
     padding: 0;
-  }
-
-  section {
     font-size: 12px;
   }
 
@@ -893,7 +891,6 @@ section {
     width: 100%;
   }
 
-
   .bt4 {
     margin-left: 50px;
   }
@@ -902,4 +899,157 @@ section {
     width: 10%;
     height: 18px;
   }
+}
+
+@media screen and (max-width: 425px) {
+#landingPage {
+    max-width: 400px;
+    padding-top: 40px;
+}
+
+  #landingPage button {
+    margin-left: 140px;
+    margin-bottom: 40px;
+}
+
+.textbelow {
+    margin-bottom: 40px;
+}
+
+.signUp {
+    max-width: 360px;
+    margin-top: 40px;
+}
+
+
+.login {
+    max-width: 360px;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+  .login button {
+    margin-left: 110px;
+  }
+
+
+  
+  .nav {
+    padding-bottom: 10px;
+  }
+
+  aside {
+    padding: 20px;
+    padding-top: 10px;
+  }
+
+  section {
+    padding: 20px;
+    padding-top: 10px;
+  }
+
+  .addCategory {
+    margin: 10%;
+    width: 80%;
+    padding: 20px;
+    padding-top: 30px;
+  }
+
+  .acCancel {
+    font-size: 15px;
+  }
+
+  .acCancel button {
+    padding: 5px 20px;
+  }
+
+  
+
+  .add {
+    margin: 10%;
+    width: 80%;
+    padding: 20px;
+    padding-top: 30px;
+  }
+
+  .cancel {
+    font-size: 15px;
+  }
+
+  .cancel button {
+    padding: 5px 20px;
+  }
+
+  
+.round {
+    width: 50%;
+}
+
+  .entertainment {
+    width: 95%;
+  }
+
+  #hideDoneTasksSpan {
+    padding-left: 2px;
+    margin-top: -20px;
+    font-size: 15px;
+  }
+
+
+  
+  #tagheading {
+    font-size: 15px;
+    padding-bottom: 5px;
+  }
+
+  .belowtag {
+    font-size: 15px;
+    width: 80%;
+  }
+
+  
+  .bt4 {
+    margin-left: 50px;
+  }
+
+
+  
+  section {
+    padding: 0;
+    font-size: 15px;
+  }
+
+  .box1 {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .box1 h1 {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
+  .box2 {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .box2 h1 {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
+  .box3 {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .box3 h1 {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
 }
