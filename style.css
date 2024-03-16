@@ -551,6 +551,14 @@ section {
   display: none;
 }
 
+.bt3 p {
+  margin-left: 10px;
+}
+
+.bt4 p {
+  margin-left: 10px;
+}
+
 #family {
   display: none;
 }
@@ -654,6 +662,241 @@ section {
 
 .cat {
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .round {
+    width: 50%;
+  }
+
+  #hideDoneTasksSpan {
+    padding-left: 2px;
+    margin-top: -20px;
+    font-size: 15px;
+  }
+
+  .entertainment {
+    width: 95%;
+  }
+
+  .add {
+    margin: 10%;
+    width: 80%;
+    padding: 30px;
+    padding-top: 30px;
+  }
+
+  #tagheading {
+    font-size: 18px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .belowtag {
+    font-size: 15px;
+    width: 90%;
+  }
+
+  .bt4 {
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #landingPage {
+    max-width: 400px;
+    padding-top: 40px;
+  }
+
+  #landingPage button {
+    margin-left: 140px;
+    margin-bottom: 40px;
+  }
+
+  .textbelow {
+    margin-bottom: 40px;
+  }
+
+  .signUp {
+    max-width: 360px;
+    margin-top: 40px;
+  }
+
+  .login {
+    max-width: 360px;
+    margin-top: 40px;
+    padding: 20px;
+  }
+
+  .login button {
+    margin-left: 110px;
+  }
+
+  .nav {
+    padding-bottom: 10px;
+  }
+
+  aside {
+    padding: 20px;
+    padding-top: 10px;
+  }
+
+  section {
+    padding: 20px;
+    padding-top: 10px;
+  }
+
+  .addCategory {
+    margin: 10%;
+    width: 80%;
+    padding: 20px;
+    padding-top: 30px;
+  }
+
+  .acCancel {
+    font-size: 15px;
+  }
+
+  .acCancel button {
+    padding: 5px 20px;
+  }
+
+  .add {
+    margin: 10%;
+    width: 80%;
+    padding: 20px;
+    padding-top: 30px;
+  }
+
+  .cancel {
+    font-size: 15px;
+  }
+
+  .cancel button {
+    padding: 5px 20px;
+  }
+
+  .round {
+    width: 50%;
+  }
+
+  .entertainment {
+    width: 95%;
+  }
+
+  #hideDoneTasksSpan {
+    padding-left: 2px;
+    margin-top: -20px;
+    font-size: 15px;
+  }
+
+  #tagheading {
+    font-size: 15px;
+    padding-bottom: 5px;
+  }
+
+  .belowtag {
+    font-size: 15px;
+    width: 90%;
+  }
+
+  .bt4 {
+    margin-left: 60px;
+  }
+
+  .bt3 p {
+    margin-left: 4px;
+  }
+
+  .bt4 p {
+    margin-left: 3px;
+  }
+
+  .fam {
+    width: 55%;
+  }
+
+  section {
+    padding: 0;
+    font-size: 15px;
+  }
+
+  .box1 {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .box1 h1 {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
+  .box2 {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .box2 h1 {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
+  .box3 {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .box3 h1 {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #landingPage {
+    max-width: 360px;
+  }
+
+  #landingPage button {
+    margin-left: 130px;
+    margin-bottom: 30px;
+  }
+
+  .signUp {
+    max-width: 340px;
+  }
+
+  .login {
+    max-width: 340px;
+  }
+
+  .login button {
+    margin-left: 100px;
+  }
+
+  .belowtag {
+    font-size: 12px;
+    width: 95%;
+  }
+
+  .bt3 p {
+    margin-left: 4px;
+  }
+
+  .bt4 p {
+    margin-left: 4px;
+  }
+
+  .entertainment {
+    width: 100%;
+  }
+
+  .fam {
+    width: 55%;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -828,6 +1071,14 @@ section {
     font-size: 13px;
   }
 
+  .bt3 p {
+    margin-left: 4px;
+  }
+
+  .bt4 p {
+    margin-left: 4px;
+  }
+
   .entertainment {
     width: 100%;
   }
@@ -842,7 +1093,6 @@ section {
     font-size: 11px;
   }
 
-  
   section {
     padding: 0;
     font-size: 12px;
@@ -887,260 +1137,16 @@ section {
   }
 
   .belowtag {
-    font-size: 12px;
-    width: 100%;
+    font-size: 10px;
+    width: 95%;
   }
 
   .bt4 {
-    margin-left: 50px;
+    margin-left: 40px;
   }
 
   .circle {
     width: 10%;
-    height: 18px;
+    height: 8px;
   }
-
-  .bt1,
-.bt2,
-.bt3,
-.bt4{
-  display: block;
-}
-
-}
-
-@media screen and (max-width: 425px) {
-#landingPage {
-    max-width: 400px;
-    padding-top: 40px;
-}
-
-  #landingPage button {
-    margin-left: 140px;
-    margin-bottom: 40px;
-}
-
-.textbelow {
-    margin-bottom: 40px;
-}
-
-.signUp {
-    max-width: 360px;
-    margin-top: 40px;
-}
-
-
-.login {
-    max-width: 360px;
-    margin-top: 40px;
-    padding: 20px;
-}
-
-  .login button {
-    margin-left: 110px;
-  }
-
-
-  
-  .nav {
-    padding-bottom: 10px;
-  }
-
-  aside {
-    padding: 20px;
-    padding-top: 10px;
-  }
-
-  section {
-    padding: 20px;
-    padding-top: 10px;
-  }
-
-  .addCategory {
-    margin: 10%;
-    width: 80%;
-    padding: 20px;
-    padding-top: 30px;
-  }
-
-  .acCancel {
-    font-size: 15px;
-  }
-
-  .acCancel button {
-    padding: 5px 20px;
-  }
-
-  
-
-  .add {
-    margin: 10%;
-    width: 80%;
-    padding: 20px;
-    padding-top: 30px;
-  }
-
-  .cancel {
-    font-size: 15px;
-  }
-
-  .cancel button {
-    padding: 5px 20px;
-  }
-
-  
-.round {
-    width: 50%;
-}
-
-  .entertainment {
-    width: 95%;
-  }
-
-  #hideDoneTasksSpan {
-    padding-left: 2px;
-    margin-top: -20px;
-    font-size: 15px;
-  }
-
-
-  
-  #tagheading {
-    font-size: 15px;
-    padding-bottom: 5px;
-  }
-
-  .belowtag {
-    font-size: 15px;
-    width: 80%;
-  }
-
-  
-  .bt4 {
-    margin-left: 50px;
-  }
-
-
-  
-  section {
-    padding: 0;
-    font-size: 15px;
-  }
-
-  .box1 {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-  }
-
-  .box1 h1 {
-    font-size: 18px;
-    padding-bottom: 10px;
-  }
-
-  .box2 {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-  }
-
-  .box2 h1 {
-    font-size: 18px;
-    padding-bottom: 10px;
-  }
-
-  .box3 {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-  }
-
-  .box3 h1 {
-    font-size: 18px;
-    padding-bottom: 10px;
-  }
-
-  .bt1,
-.bt2,
-.bt3,
-.bt4{
-  display: block;
-}
-
-}
-
-@media screen and (max-width: 375px) {
-#landingPage {
-    max-width: 360px;
-}
-
-  #landingPage button {
-    margin-left: 130px;
-    margin-bottom: 30px;
-}
-
-
-.signUp {
-    max-width: 340px;
-}
-
-.login {
-    max-width: 340px;
-}
-
-
-  .login button {
-    margin-left: 100px;
-  }
-
-  .belowtag {
-    font-size: 15px;
-    width: 90%;
-}
-
-}
-
-@media screen and (max-width: 768px) {
-  
-  
-.round {
-    width: 50%;
-}
-
-  #hideDoneTasksSpan {
-    padding-left: 2px;
-    margin-top: -20px;
-    font-size: 15px;
-  }
-
-  
-  .entertainment {
-    width: 95%;
-  }
-
- 
-  .add {
-    margin: 10%;
-    width: 80%;
-    padding: 30px;
-    padding-top: 30px;
-  }
-
-
-  #tagheading {
-    font-size: 18px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-  }
-
-  .belowtag {
-    font-size: 15px;
-    width: 90%;
-  }
-
-  
-  .bt4 {
-    margin-left: 50px;
-  }
-
 }
