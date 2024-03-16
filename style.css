@@ -1053,3 +1053,35 @@ section {
   }
 
 }
+
+
+@media screen and (max-width: 375px) {
+#landingPage {
+    max-width: 360px;
+}
+
+  #landingPage button {
+    margin-left: 130px;
+    margin-bottom: 30px;
+}
+
+
+.signUp {
+    max-width: 340px;
+}
+
+.login {
+    max-width: 340px;
+}
+
+
+  .login button {
+    margin-left: 100px;
+  }
+
+  .belowtag {
+    font-size: 15px;
+    width: 90%;
+}
+
+}
