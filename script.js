@@ -111,8 +111,8 @@ $(document).ready(function () {
     } else if (categoryInput.value == "work") {
       $(".circle1").show();
       $("#work").show();
-      $("#hideDoneTasks").show();
-      $("#hideDoneTasksSpan").show();
+      // $("#hideDoneTasks").show();
+      // $("#hideDoneTasksSpan").show();
       $("#img").show();
       $(".addCategory").hide();
       $("#plus").show();
@@ -122,8 +122,8 @@ $(document).ready(function () {
     } else if (categoryInput.value == "study") {
       $(".circle2").show();
       $("#study").show();
-      $("#hideDoneTasks").show();
-      $("#hideDoneTasksSpan").show();
+      // $("#hideDoneTasks").show();
+      // $("#hideDoneTasksSpan").show();
       $("#img").show();
       $(".addCategory").hide();
       $("#plus").show();
@@ -133,8 +133,8 @@ $(document).ready(function () {
     } else if (categoryInput.value == "entertainment") {
       $(".circle3").show();
       $("#entertainment").show();
-      $("#hideDoneTasks").show();
-      $("#hideDoneTasksSpan").show();
+      // $("#hideDoneTasks").show();
+      // $("#hideDoneTasksSpan").show();
       $("#img").show();
       $(".addCategory").hide();
       $("#plus").show();
@@ -144,8 +144,8 @@ $(document).ready(function () {
     } else if (categoryInput.value == "family") {
       $(".circle4").show();
       $("#family").show();
-      $("#hideDoneTasks").show();
-      $("#hideDoneTasksSpan").show();
+      // $("#hideDoneTasks").show();
+      // $("#hideDoneTasksSpan").show();
       $("#img").show();
       $(".addCategory").hide();
       $("#plus").show();
