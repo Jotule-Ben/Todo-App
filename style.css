@@ -209,6 +209,14 @@ section {
   margin: 5px;
 }
 
+.box4 {
+  width: 48%;
+  height: 160px;
+  padding: 20px;
+  background-color: #fff9dc;
+  margin: 5px;
+}
+
 /* .box4 {
   width: 48%;
   height: 160px;
@@ -544,6 +552,7 @@ section {
   text-decoration: none;
   display: block;
   text-align: left;
+  cursor: pointer;
 }
 
 .dropdown-content span:hover {
@@ -610,6 +619,10 @@ section {
 }
 
 .box3 {
+  display: none;
+}
+
+.box4 {
   display: none;
 }
 
@@ -897,6 +910,17 @@ section {
     padding-bottom: 10px;
   }
 
+  .box4 {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .box4 h1 {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
   
   #img{
     height: 90px;
@@ -1179,6 +1203,17 @@ section {
   }
 
   .box3 h1 {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
+  .box4 {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .box4 h1 {
     font-size: 18px;
     padding-bottom: 10px;
   }
