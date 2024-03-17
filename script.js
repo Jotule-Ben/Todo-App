@@ -8,6 +8,7 @@ let title = document.getElementById("title");
 let description = document.getElementById("description");
 let box1 = document.getElementsByClassName("box1");
 let box2 = document.getElementsByClassName("box2");
+let box3 = document.getElementsByClassName("box3");
 
 $(document).ready(function () {
   $("#name").addClass("unValidated");
@@ -166,6 +167,10 @@ $(document).ready(function () {
     $("#taskTitle3").toggleClass("linethrough");
   });
 
+  $("#checkbox4").click(function () {
+    $("#taskTitle4").toggleClass("linethrough");
+  });
+
   ////////////// hide and show tasks
   // $("#hideDoneTasks").click(function () {
   //   if ($("#taskTitle").toggleClass("linethrough")) {
@@ -232,6 +237,16 @@ $(document).ready(function () {
         $("#title").val("");
         $("#description").val("");
       }
+      if (box1 && box2 && box3) {
+        $("#taskTitle4").html("<p>" + existingModalDetails[3].title + "</p>");
+        $("#des4").html("<p>" + existingModalDetails[3].description + "</p>");
+        $(".box1").show();
+        $(".box2").show();
+        $(".box3").show();
+        $(".box4").show();
+        $("#title").val("");
+        $("#description").val("");
+      }
     } else {
       return;
     }
@@ -248,6 +263,10 @@ $(document).ready(function () {
       $(".add").show();
     });
 
+    $(".editTask4").click(function () {
+      $(".add").show();
+    });
+
     $(".delete1").click(function () {
       $(".box1").hide();
     });
@@ -258,6 +277,10 @@ $(document).ready(function () {
 
     $(".delete3").click(function () {
       $(".box3").hide();
+    });
+
+    $(".delete4").click(function () {
+      $(".box4").hide();
     });
   });
 
