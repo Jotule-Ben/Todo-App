@@ -22,7 +22,7 @@ $(document).ready(function () {
   });
 
   $("#signUp").click(function () {
-    console.log(userSignUpPassword.value, userSignUpPassword.value.length);
+    // console.log(userSignUpPassword.value, userSignUpPassword.value.length);
     if (
       userSignUpEmail.value == "" ||
       userSignUpPassword.value == "" ||
@@ -39,11 +39,11 @@ $(document).ready(function () {
       $("#name").addClass("unValidated");
       $("#suEmail").addClass("unValidated");
       $("#suPassword").addClass("unValidated");
-      console.log(
-        userSignUpEmail.value,
-        userSignUpPassword.value,
-        userName.value
-      );
+      // console.log(
+      //   userSignUpEmail.value,
+      //   userSignUpPassword.value,
+      //   userName.value
+      // );
       $(".login").show();
       $(".signUp").hide();
     }
@@ -207,46 +207,69 @@ $(document).ready(function () {
 
     localStorage.setItem("myFormData", JSON.stringify(existingModalDetails));
     if (title.value != "" && description.value != "") {
-      if (title.value != "" && description.value != "") {
-        $("#taskTitle").html("<p>" + existingModalDetails[0].title + "</p>");
-        $("#des").html("<p>" + existingModalDetails[0].description + "</p>");
-        $(".box1").show();
-        // $(".box2").show();
-        // $(".box3").show();
-        $(".add").hide();
-        $("#title").val("");
-        $("#description").val("");
-        $(".bt1").click(function () {
-          $("#catDiv1").show().addClass("bt1");
-        });
-      }
-      if (box1) {
-        $("#taskTitle2").html("<p>" + existingModalDetails[1].title + "</p>");
-        $("#des2").html("<p>" + existingModalDetails[1].description + "</p>");
-        $(".box1").show();
-        $(".box2").show();
-        $("#title").val("");
-        $("#description").val("");
-      }
-      if (box1 && box2) {
-        $("#taskTitle3").html("<p>" + existingModalDetails[2].title + "</p>");
-        $("#des3").html("<p>" + existingModalDetails[2].description + "</p>");
-        $(".box1").show();
-        $(".box2").show();
-        $(".box3").show();
-        $("#title").val("");
-        $("#description").val("");
-      }
-      if (box1 && box2 && box3) {
-        $("#taskTitle4").html("<p>" + existingModalDetails[3].title + "</p>");
-        $("#des4").html("<p>" + existingModalDetails[3].description + "</p>");
-        $(".box1").show();
-        $(".box2").show();
-        $(".box3").show();
-        $(".box4").show();
-        $("#title").val("");
-        $("#description").val("");
-      }
+      $(".box").show();
+      const boxDiv = document.createElement("div");
+      boxDiv.classList.add("box");
+
+      const editDiv = document.createElement("div");
+      editDiv.classList.add("edit");
+      const taskTitle = document.createElement("h1");
+      taskTitle.classList.add("tt");
+      taskTitle.textContent = "This is title";
+      const dropDownDiv = document.createElement("div");
+      dropDownDiv.classList.add("dropdown");
+      const editIcon = document.createElement("p");
+      editIcon.classList.add("edit1");
+      editIcon.textContent = "...";
+
+      const dropDownContent = document.createElement("div");
+      dropDownContent.classList.add("dropdown-content");
+
+      const editTask = document.createElement("span");
+      editTask.classList.add("editTask1");
+      editTask.textContent = "Edit";
+      const deleteTask = document.createElement("span");
+      deleteTask.classList.add("delete1");
+      deleteTask.textContent = "Delete";
+
+      dropDownContent.appendChild(editTask);
+      dropDownContent.appendChild(deleteTask);
+      dropDownDiv.appendChild(editIcon);
+      dropDownDiv.appendChild(dropDownContent);
+      editDiv.appendChild(taskTitle);
+      editDiv.appendChild(dropDownDiv);
+      boxDiv.appendChild(editDiv);
+
+      const desDiv = document.createElement("p");
+      desDiv.classList.add("dcn");
+      desDiv.textContent = "description goes here";
+      boxDiv.appendChild(desDiv);
+
+      const circleContainer = document.createElement("div");
+      circleContainer.classList.add("circlecontainer");
+
+      const inputDiv = document.createElement("div");
+      inputDiv.classList.add("input");
+
+      const input = document.createElement("input");
+       input.type = "checkbox";
+      input.classList.add("checkbox");
+
+      const inputLabel = document.createElement("label");
+      inputLabel.classList.add("inputLabel");
+      inputLabel.textContent = 'Done'
+
+      inputDiv.appendChild(input);
+      inputDiv.appendChild(inputLabel);
+      circleContainer.appendChild(inputDiv);
+      boxDiv.appendChild(circleContainer);
+
+      const boxContainer = document.getElementById("boxes");
+      boxContainer.appendChild(boxDiv);
+
+      $("#title").val("");
+      $("#description").val("");
+      $(".add").hide();
     } else {
       return;
     }
@@ -255,33 +278,13 @@ $(document).ready(function () {
       $(".add").show();
     });
 
-    $(".editTask2").click(function () {
-      $(".add").show();
-    });
-
-    $(".editTask3").click(function () {
-      $(".add").show();
-    });
-
-    $(".editTask4").click(function () {
-      $(".add").show();
-    });
+    let deleteParent = $(".delete1").parentElement;
+    console.log(deleteParent);
 
     $(".delete1").click(function () {
-      $(".box1").hide();
+      $(".deleteParent").hide();
     });
 
-    $(".delete2").click(function () {
-      $(".box2").hide();
-    });
-
-    $(".delete3").click(function () {
-      $(".box3").hide();
-    });
-
-    $(".delete4").click(function () {
-      $(".box4").hide();
-    });
   });
 
   $("#cancelp").click(function () {
