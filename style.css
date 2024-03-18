@@ -97,12 +97,12 @@
   justify-content: space-between;
 }
 
-.checkbox label {
+.inputLabel {
   font-size: 12px;
   padding-left: 2px;
 }
 
-input[type="checkbox"] {
+.checkbox{
   accent-color: rgb(247, 244, 244);
   border: 1px solid gray;
 }
@@ -186,6 +186,14 @@ section {
 }
 
 .box1 {
+  width: 48%;
+  height: 160px;
+  padding: 20px;
+  background-color: #fff9dc;
+  margin: 5px;
+}
+
+.box {
   width: 48%;
   height: 160px;
   padding: 20px;
