@@ -176,7 +176,6 @@ $(document).ready(function () {
     handleLogin();
   });
 
-
   $("#plus").click(function () {
     5;
     $(".addCategory").show();
@@ -224,7 +223,6 @@ $(document).ready(function () {
 
       // SIDE BAR CHECKBOX
 
-
       sideBarDiv.appendChild(circleDiv);
 
       sideBar.appendChild(sideBarDiv);
@@ -253,25 +251,6 @@ $(document).ready(function () {
   $("#addCategory").click(function () {
     handleAddCategory();
 
-    // ADD TASKS TAGS ON ADD TASKS MODAL
-
-    // const colorBelowTags = document.createElement("div");
-    // colorBelowTags.classList.add("tagsCircle");
-    // colorBelowTags.style.backgroundColor = getRandomColor();
-
-    // const textBelowTags = document.createElement("p");
-    // textBelowTags.classList.add("modalTagtitle");
-    // textBelowTags.innerHTML = "categoryInput.value";
-    // belowtag.appendChild(colorBelowTags);
-    // belowtag.appendChild(textBelowTags);
-
-    // $("#tagheading").show();
-    // $("#belowtag").show();
-
-    // $("#belowtag").append(
-    //   '<div class ="tagsCircle">' +  '</div>' +'<p class="modalTagtitle"' + "tags3" + "</p>"
-    // );
-
     function handleCategory() {
       const formData = {
         user_id: userId,
@@ -288,12 +267,6 @@ $(document).ready(function () {
           if (categoryInput.value != "") {
             $(".circle1").show();
             $("#work").show();
-            // $("#img").show();
-            // $(".addCategory").hide();
-            // $("#plus").show();
-            // $("#tagheading").show();
-            // $(".tagsCircle").show();
-            // $(".modalTagtitle").show();
             $("#categoryInput").val("");
             $(".addCategory").hide();
           }
