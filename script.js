@@ -235,7 +235,6 @@ $(document).ready(function () {
 
     Checkbox.addEventListener("change", (event) => {
       hideDone = Checkbox.checked;
-      // For debugging purpose
       boxContainer.innerHTML = "";
       handleGetTasks(hideDone);
     });
@@ -245,7 +244,6 @@ $(document).ready(function () {
     const span = document.createElement("span");
     span.textContent = "Hide Done Tasks";
     span.style.fontSize = "12px";
-    // Checkbox.appendChild(span);
 
     doneTasks.appendChild(Checkbox);
     doneTasks.appendChild(span);
