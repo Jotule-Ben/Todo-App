@@ -80,8 +80,8 @@ $(document).ready(function () {
         type: "post",
         data: formObj,
         success: function (res) {
-          console.log(res, "success");
-          console.log(res.id);
+          // console.log(res, "success");
+          // console.log(res.id);
           if (
             !userSignUpEmail.value &&
             !userName.value &&
@@ -110,7 +110,7 @@ $(document).ready(function () {
     }
 
     handleSignUp();
-    console.log(userId);
+    // console.log(userId);
   });
 
   $("#existingAcc").click(function () {
