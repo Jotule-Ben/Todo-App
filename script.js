@@ -224,7 +224,6 @@ $(document).ready(function () {
 
       // SIDE BAR CHECKBOX
 
-      // console.log(aside);
 
       sideBarDiv.appendChild(circleDiv);
 
