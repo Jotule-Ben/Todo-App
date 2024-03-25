@@ -296,7 +296,6 @@ $(document).ready(function () {
         $(".addCategory").hide();
         $("#plus").show();
         $("#tagheading").show();
-        // $("#belowtag").show();
       },
       error: function (err) {
         console.log("msg err", err);
