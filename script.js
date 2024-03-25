@@ -176,50 +176,6 @@ $(document).ready(function () {
     handleLogin();
   });
 
-  // $("#login").click(function (e) {
-  //   e.preventDefault();
-
-  //   let email = $("#email").val();
-  //   let password = $("#password").val();
-
-  //   let formData = {
-  //     email: email,
-  //     password: password,
-  //   };
-
-  //   localStorage.setItem("formData", JSON.stringify(formData));
-
-  //   console.log(localStorage);
-
-  //   $("#password").val("");
-  //   $("#email").val("");
-  // });
-
-  // $("#login").click(function () {
-  //   if (userEmail.value == "" || userPassword.value == "") {
-  //     $("#email").addClass("validate");
-  //     $("#password").addClass("validate");
-  //   } else if (
-  //     userEmail.value == userSignUpEmail.value &&
-  //     userPassword.value == userSignUpPassword.value
-  //   ) {
-  //     $("#email").addClass("unValidated");
-  //     $("#password").addClass("unValidated");
-  //     $(".MAIN").show();
-  //     $(".login").hide();
-  //   } else if (userEmail.value !== userSignUpEmail.value) {
-  //     $(".enterEmail")
-  //       .html("<p>" + "Enter your correct Email" + "</p>")
-  //       .css({ color: "red", "font-size": "12px" });
-  //   } else if (userPassword.value !== userSignUpPassword.value) {
-  //     $(".enterPassword")
-  //       .html("<p>" + "Enter your correct password" + "</p>")
-  //       .css({ color: "red", "font-size": "12px" });
-  //   } else {
-  //     $(".enterEmail").html("");
-  //     $(".enterPassword").html("");
-  //   }
-  // });
 
   $("#plus").click(function () {
     5;
@@ -248,9 +204,6 @@ $(document).ready(function () {
     }
 
     // SIDE BAR
-
-    // const tryyesy = "trgfdgf";
-    // circleText.innerHTML = `<p>${tryyesy}</p>`;
 
     datas?.map((data) => {
       const circleDiv = document.createElement("div");
