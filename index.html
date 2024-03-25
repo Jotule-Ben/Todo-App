@@ -48,24 +48,23 @@
 
     <div class="signUp">
       <div class="name">
-        <label for="">Name</label><br />
-        <input type="name" id="name" />
+        <input type="name" id="name" placeholder="Name" />
         <p class="enterName"></p>
       </div>
 
       <div class="suEmail">
-        <label for="">Email</label><br />
-        <input type="email" id="suEmail" />
+        <input type="email" id="suEmail" placeholder="Email" />
         <p class="enterEmail"></p>
       </div>
 
       <div class="suPassword">
-        <label for="">Password</label><br />
-        <input type="password" id="suPassword" />
+        <input type="password" id="suPassword" placeholder="Password" />
         <p class="enterPassword"></p>
       </div>
 
       <button id="signUp">Sign Up</button>
+      <h3>OR</h3>
+      <button id="existingAcc">Login with existing account</button>
     </div>
 
     <div class="login">
@@ -82,6 +81,9 @@
       </div>
 
       <button id="login">Login</button>
+      <button id="registerAcc">
+        Do not have an account? Click to register
+      </button>
     </div>
 
     <div class="MAIN">
@@ -94,31 +96,7 @@
         </nav>
 
         <aside class="aside">
-          <div class="hiddenAside">
-            <div class="round">
-              <div class="circle1"></div>
-              <p id="work">work</p>
-            </div>
-
-            <div class="round study">
-              <div class="circle2"></div>
-              <p id="study">study</p>
-            </div>
-
-            <div class="round entertainment">
-              <div class="circle3"></div>
-              <p id="entertainment">entertainment</p>
-            </div>
-
-            <div class="round fam">
-              <div class="circle4"></div>
-              <p id="family">family</p>
-            </div>
-            <input type="checkbox" name="" id="hideDoneTasks" /><span
-              id="hideDoneTasksSpan"
-              >Hide Done Tasks</span
-            >
-          </div>
+          <div class="hiddenAside" id="sideBar"></div>
           <div id="plus">
             <p>+</p>
             <span>Add category</span>
@@ -126,38 +104,7 @@
           <img src="./assets/img2.png" alt="img2" id="img" />
         </aside>
 
-        <section id="boxes">
-
-          <!-- <div class="box1 box">
-            <div class="edit">
-
-             
-              <h1 id="taskTitle" class="tt"></h1>
-              <div class="dropdown">
-                <p id="edit1">...</p>
-                <div class="dropdown-content">
-                  <span class="editTask1">edit</span>
-                  <span class="delete1">delete</span>
-                </div>
-              </div>
-            </div>
-
-            <p id="des" class="dcn">
-            </p>
-            <div class="circlecontainer">
-              <div class="circletask cat">
-                <div id="catDiv1"></div>
-                <div id="catDiv2"></div>
-                <div id="catDiv3"></div>
-              </div>
-              <div class="input">
-                <input type="checkbox" name="" id="checkbox" class="checkbox"/>
-                <label for="" class="inputLabel">Done</label
-                >
-              </div>
-            </div>
-          </div> -->
-        </section>
+        <section id="boxes"></section>
       </div>
     </div>
 
@@ -197,27 +144,7 @@
 
       <div class="tag">
         <h3 id="tagheading">Tags</h3>
-        <div class="belowtag">
-          <div class="bt bt1">
-            <div class="circle1 circle"></div>
-            <p>work</p>
-          </div>
-
-          <div class="bt bt2">
-            <div class="circle2 circle"></div>
-            <p>study</p>
-          </div>
-
-          <div class="bt bt3">
-            <div class="circle3 circle"></div>
-            <p>entertainment</p>
-          </div>
-
-          <div class="bt bt4">
-            <div class="circle4 circle"></div>
-            <p>family</p>
-          </div>
-        </div>
+        <div class="belowtag" id="belowtag"></div>
       </div>
     </div>
 

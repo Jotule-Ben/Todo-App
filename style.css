@@ -75,6 +75,10 @@
   margin-bottom: 90px;
 }
 
+.addlinethrough{
+  text-decoration: line-through;
+}
+
 .textbelow h3 {
   text-decoration: line-through;
 }
@@ -102,9 +106,8 @@
   padding-left: 2px;
 }
 
-.checkbox{
+.checkbox {
   accent-color: rgb(247, 244, 244);
-  border: 1px solid gray;
 }
 
 .MAIN {
@@ -185,44 +188,13 @@ section {
   padding-top: 25px;
 }
 
-.box1 {
-  width: 48%;
-  height: 160px;
-  padding: 20px;
-  background-color: #fff9dc;
-  margin: 5px;
-}
-
 .box {
   width: 48%;
   height: 160px;
   padding: 20px;
   background-color: #fff9dc;
   margin: 5px;
-}
-
-.box2 {
-  width: 48%;
-  height: 170px;
-  padding: 20px;
-  background-color: #fff9dc;
-  margin: 5px;
-}
-
-.box3 {
-  width: 48%;
-  height: 160px;
-  padding: 20px;
-  background-color: #fff9dc;
-  margin: 5px;
-}
-
-.box4 {
-  width: 48%;
-  height: 160px;
-  padding: 20px;
-  background-color: #fff9dc;
-  margin: 5px;
+  /* text-decoration: line-through; */
 }
 
 .round {
@@ -249,7 +221,7 @@ section {
   border-radius: 50%;
   padding: 5px;
   margin-top: 11px;
-  background-color: rgb(245, 156, 245);
+  /* background-color: rgb(245, 156, 245); */
 }
 
 .circle2 {
@@ -396,9 +368,26 @@ section {
 }
 
 .belowtag {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  width: 85%;
+  overflow: auto;
+}
+
+/* .scroll-container {
+  display: flex;
+  width: 100%;
+} */
+
+/* .scroll-container div {
+  padding: 15px;
+  min-width: 24%;
+  height: fit-content;
+  cursor: pointer;
+} */
+
+.belowtag::-webkit-scrollbar {
+  display: none;
 }
 
 .bt {
@@ -415,92 +404,132 @@ section {
   margin: -2px;
 }
 
+.tagsCircle {
+  width: 25px;
+  height: 22px;
+  border-radius: 50%;
+  padding: 10px;
+  margin: -2px;
+  background-color: blueviolet;
+  /* display: none; */
+}
+
+.modalTagtitle {
+  margin-top: 3px;
+  margin-left: 1px;
+}
+
+.tagsCircle {
+  margin: 1px;
+  margin-left: 30px;
+}
+
 .login {
   max-width: 500px;
   margin: auto;
   padding: 30px;
-  background-color: #fafafd;
   margin-bottom: 20px;
-  border-radius: 30px;
-  box-shadow: 0 0 15px 1px #08080861;
-  line-height: 7;
   margin-top: 80px;
 }
 
 .login input {
   padding: 20px;
   background-color: #f2f1f9;
-  /* border: 1px solid #f2f1f9; */
-  border-radius: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
   width: 100%;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .email {
-  line-height: 2;
-  padding-bottom: 40px;
+  margin-top: 10px;
 }
 
 .password {
-  line-height: 2;
-  /* padding-bottom: 20px; */
+  margin-top: 10px;
 }
 
 .login button {
+  width: 100%;
   padding: 10px 25px;
   font-size: 18px;
-  background-color: khaki;
-  border: 1px solid khaki;
-  border-radius: 15px;
+  background-color: #504ef3;
+  border: 1px solid #504ef3;
+  color: #fff;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 70px;
-  margin-left: 170px;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .signUp {
   max-width: 500px;
   margin: auto;
   padding: 30px;
-  background-color: #fafafd;
   margin-bottom: 20px;
-  border-radius: 30px;
-  box-shadow: 0 0 15px 1px #08080861;
-  line-height: 3;
   margin-top: 80px;
 }
 
 .signUp input {
-  padding: 10px;
+  padding: 20px;
   background-color: #f2f1f9;
-  /* border: 1px solid #f2f1f9; */
-  border-radius: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
   width: 100%;
-  font-size: 18px;
-}
-
-#name {
-  line-height: 2;
-  margin-bottom: 40px;
+  font-size: 15px;
 }
 
 #suEmail {
-  line-height: 2;
-  margin-bottom: 40px;
+  margin-top: 10px;
 }
 
 #suPassword {
-  line-height: 2;
+  margin-top: 10px;
 }
 
-.signUp button {
+.signUp button:first-of-type {
   width: 100%;
   padding: 10px 25px;
   font-size: 18px;
-  background-color: khaki;
-  border: 1px solid khaki;
-  border-radius: 15px;
+  background-color: #504ef3;
+  border: 1px solid #504ef3;
+  color: #fff;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 70px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.signUp h3 {
+  text-align: center;
+}
+
+#existingAcc {
+  width: 100%;
+  padding: 10px 25px;
+  font-size: 18px;
+  /* background-color: rgb(116, 22, 211); */
+  background-color: #f2f1f9;
+  border: 1px solid #f2f1f9;
+  color: #504ef3;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#registerAcc {
+  width: 100%;
+  padding: 10px 25px;
+  font-size: 18px;
+  /* background-color: rgb(116, 22, 211); */
+  background-color: #f2f1f9;
+  border: 1px solid #f2f1f9;
+  color: #504ef3;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .login,
@@ -514,10 +543,6 @@ section {
 
 #Task {
   cursor: pointer;
-}
-
-.linethrough {
-  text-decoration: line-through;
 }
 
 .edit {
@@ -577,11 +602,9 @@ section {
   display: none;
 }
 
-.circle1,
 .circle2,
 .circle3,
 .circle4,
-.bt1,
 .bt2,
 .bt3,
 .bt4 {
@@ -612,22 +635,6 @@ section {
   display: none;
 }
 
-.box1 {
-  display: none;
-}
-
-.box2 {
-  display: none;
-}
-
-.box3 {
-  display: none;
-}
-
-.box4 {
-  display: none;
-}
-
 #plus {
   display: flex;
   justify-content: space-between;
@@ -649,8 +656,7 @@ section {
 }
 
 .validate {
-  border: 1px solid red;
-  background-color: crimson;
+  border: 1px solid red !important;
 }
 
 .addCategory {
@@ -710,11 +716,14 @@ section {
 }
 
 #tagheading {
+  margin: 2px;
+  margin-left: 30px;
   display: none;
 }
 
-.cat {
-  display: none;
+.cat >div {
+  background-color: aqua;
+  /* display: none; */
 }
 
 @media screen and (max-width: 768px) {
@@ -748,6 +757,7 @@ section {
   .belowtag {
     font-size: 15px;
     width: 90%;
+    cursor: pointer;
   }
 
   .bt4 {
@@ -883,46 +893,13 @@ section {
     font-size: 15px;
   }
 
-  .box1 {
+  .box {
     width: 100%;
     height: auto;
     padding: 10px;
   }
 
-  .box1 h1 {
-    font-size: 18px;
-    padding-bottom: 10px;
-  }
-
-  .box2 {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-  }
-
-  .box2 h1 {
-    font-size: 18px;
-    padding-bottom: 10px;
-  }
-
-  .box3 {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-  }
-
-  .box3 h1 {
-    font-size: 18px;
-    padding-bottom: 10px;
-  }
-
-  .box4 {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-  }
-
-  .box4 h1 {
+  .box h1 {
     font-size: 18px;
     padding-bottom: 10px;
   }
