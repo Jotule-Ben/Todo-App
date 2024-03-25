@@ -151,10 +151,10 @@ $(document).ready(function () {
         data: formObj,
         // data: JSON.stringify(formObj),
         success: function (res) {
-          console.log(res);
+          // console.log(res);
           userEmail.textContent = "";
           userPassword.textContent = "";
-          console.log(res.msg);
+          // console.log(res.msg);
           if (res.msg != "Invalid email or password") {
             $(".MAIN").show();
             $(".login").hide();

@@ -75,7 +75,7 @@
   margin-bottom: 90px;
 }
 
-.addlinethrough{
+.addlinethrough {
   text-decoration: line-through;
 }
 
@@ -721,7 +721,7 @@ section {
   display: none;
 }
 
-.cat >div {
+.cat > div {
   background-color: aqua;
   /* display: none; */
 }
