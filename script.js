@@ -14,6 +14,7 @@ let categoryData;
 let getColorsData;
 let createTaskTagId;
 let hideDone;
+let tag__id;
 
 $(document).ready(function () {
   $(".getStarted").click(function () {
@@ -22,23 +23,6 @@ $(document).ready(function () {
   });
 
   $("#signUp").click(function () {
-    // if (
-    //   userSignUpEmail.value == "" ||
-    //   userSignUpPassword.value == "" ||
-    //   userName.value == ""
-    // ) {
-    //   $("#suEmail").addClass("validate");
-    //   $("#suPassword").addClass("validate");
-    //   $("#name").addClass("validate");
-    // } else if (
-    //   userSignUpEmail.value != "" &&
-    //   userSignUpPassword.value != "" &&
-    //   userName.value != ""
-    // ) {
-    //   $(".MAIN").show();
-    //   $(".signUp").hide();
-    // }
-
     if (
       userName.value == "" &&
       userSignUpEmail.value == "" &&
@@ -47,7 +31,6 @@ $(document).ready(function () {
       $("#name").addClass("validate");
       $("#suEmail").addClass("validate");
       $("#suPassword").addClass("validate");
-      //  return;
     } else if (
       userName.value == "" ||
       userSignUpEmail.value == "" ||
@@ -56,17 +39,7 @@ $(document).ready(function () {
       $("#name").addClass("validate");
       $("#suEmail").addClass("validate");
       $("#suPassword").addClass("validate");
-      //  return;
     }
-    // else if (
-    //   userName.value != "" &&
-    //   userSignUpEmail.value != "" &&
-    //   userSignUpEmail.value != ""
-    // ) {
-    //   $(".MAIN").show();
-    //   $(".signUp").hide();
-    //   //  return;
-    // }
 
     function handleSignUp() {
       let formObj = {
@@ -80,23 +53,18 @@ $(document).ready(function () {
         type: "post",
         data: formObj,
         success: function (res) {
-          // console.log(res, "success");
-          // console.log(res.id);
-          if (
-            !userSignUpEmail.value &&
-            !userName.value &&
-            !userSignUpPassword.value
-          ) {
-            return;
-          } else {
-            $(".MAIN").show();
-            $(".signUp").hide();
-          }
+          console.log(res, "success");
+          console.log(res.id);
+          $(".MAIN").show();
+          $(".signUp").hide();
           userName.textContent = "";
           userSignUpEmail.textContent = "";
           userSignUpPassword.textContent = "";
           localStorage.setItem("usersId", res.id);
-          localStorage.getItem("usersId");
+          userId = localStorage.getItem("usersId");
+
+          handleGetTags();
+          handleGetTasks();
           console.log(localStorage);
         },
         error: function (err) {
@@ -110,7 +78,6 @@ $(document).ready(function () {
     }
 
     handleSignUp();
-    // console.log(userId);
   });
 
   $("#existingAcc").click(function () {
@@ -127,17 +94,10 @@ $(document).ready(function () {
     if (userEmail.value == "" && userPassword.value == "") {
       $("#email").addClass("validate");
       $("#password").addClass("validate");
-      // return;
     } else if (userEmail.value == "" || userPassword.value == "") {
       $("#email").addClass("validate");
       $("#password").addClass("validate");
-      // return;
     }
-    // else if (userEmail.value != "" && userPassword.value != "") {
-    //   $(".MAIN").show();
-    //   $(".login").hide();
-    //   //  return;
-    // }
 
     function handleLogin() {
       let formObj = {
@@ -149,21 +109,22 @@ $(document).ready(function () {
         url: "http://todo.reworkstaging.name.ng/v1/users/login",
         type: "post",
         data: formObj,
-        // data: JSON.stringify(formObj),
         success: function (res) {
-          // console.log(res);
-          userEmail.textContent = "";
-          userPassword.textContent = "";
-          // console.log(res.msg);
           if (res.msg != "Invalid email or password") {
+            userEmail.textContent = "";
+            userPassword.textContent = "";
             $(".MAIN").show();
             $(".login").hide();
-          }
-          localStorage.setItem("usersId", res.id);
-          userId = localStorage.getItem("usersId");
+            localStorage.setItem("usersId", res.id);
+            userId = localStorage.getItem("usersId");
 
-          handleGetTags();
-          handleGetTasks();
+            handleGetTags();
+            handleGetTasks();
+          } else {
+            $("#email").addClass("validate");
+            $("#password").addClass("validate");
+            return;
+          }
         },
         error: function (err) {
           console.log("msg err", err);
@@ -188,6 +149,104 @@ $(document).ready(function () {
   });
 
   function handleAddCategory(datas) {
+    let circleDiv = document.createElement("div");
+    circleDiv.classList.add("round");
+
+    sideBar.innerHTML = "";
+
+    // SIDE BAR
+    datas?.map((data) => {
+      let circleDiv = document.createElement("div");
+      circleDiv.classList.add("round");
+
+      const circle = document.createElement("div");
+      circle.classList.add("circle1");
+      circle.style.marginRight = "5px";
+      circle.style.backgroundColor = data.color;
+
+      const circleText = document.createElement("div");
+      circleText.innerHTML = `<p>${data?.title}</p>`;
+
+      const deleteTag = document.createElement("button");
+      deleteTag.textContent = "delete";
+      deleteTag.classList.add("deleteTag");
+
+      circleDiv.appendChild(circle);
+      circleDiv.appendChild(circleText);
+      if (data.task === 0) {
+        circleDiv.appendChild(deleteTag);
+      } else {
+        circleDiv.appendChild(deleteTag);
+        deleteTag.disabled = true;
+        deleteTag.style.backgroundColor = "grey";
+        deleteTag.style.borderColor = "grey";
+        deleteTag.classList.add("colorsDiv");
+      }
+
+      $(deleteTag).click(() => {
+        $.ajax({
+          url: `http://todo.reworkstaging.name.ng/v1/tags/${data.id}`,
+          type: "delete",
+          success: function (res) {
+            handleGetTags();
+            handleGetTasks();
+          },
+          error: function (err) {
+            console.log("msg err", err);
+            return;
+          },
+        });
+      });
+
+      const sideBarDiv = document.createElement("div");
+      sideBarDiv.classList.add("hiddenAside");
+
+      // SIDE BAR CHECKBOX
+      sideBarDiv.appendChild(circleDiv);
+
+      sideBarDiv.addEventListener("click", () => {
+        $.ajax({
+          url: `http://todo.reworkstaging.name.ng/v1/tags/tasks?tag_id=${data.id}`,
+          type: "GET",
+          success: function (res) {
+            boxContainer.innerHTML = "";
+            res.map((taskData) => {
+              handleDisplayTasks(taskData, undefined, data.color);
+            });
+          },
+          error: function (err) {
+            console.log("msg err", err);
+          },
+        });
+      });
+
+      sideBar.appendChild(sideBarDiv);
+    });
+
+    const Checkbox = document.createElement("input");
+    Checkbox.type = "checkbox";
+
+    Checkbox.addEventListener("change", (event) => {
+      hideDone = Checkbox.checked;
+      // For debugging purpose
+      boxContainer.innerHTML = "";
+      handleGetTasks(hideDone);
+    });
+
+    const doneTasks = document.createElement("div");
+
+    const span = document.createElement("span");
+    span.textContent = "Hide Done Tasks";
+    span.style.fontSize = "12px";
+    // Checkbox.appendChild(span);
+
+    doneTasks.appendChild(Checkbox);
+    doneTasks.appendChild(span);
+    sideBar.appendChild(doneTasks);
+  }
+  $("#addCategory").click(function () {
+    handleAddCategory();
+
     function getRandomColor() {
       let r = Math.floor(Math.random() * 256);
       let g = Math.floor(Math.random() * 256);
@@ -202,55 +261,6 @@ $(document).ready(function () {
       return hexColor;
     }
 
-    // SIDE BAR
-
-    datas?.map((data) => {
-      const circleDiv = document.createElement("div");
-      circleDiv.classList.add("round");
-
-      const circle = document.createElement("div");
-      circle.classList.add("circle1");
-      circle.style.backgroundColor = data.color;
-
-      const circleText = document.createElement("div");
-      circleText.innerHTML = `<p>${data?.title}</p>`;
-
-      circleDiv.appendChild(circle);
-      circleDiv.appendChild(circleText);
-
-      const sideBarDiv = document.createElement("div");
-      sideBarDiv.classList.add("hiddenAside");
-
-      // SIDE BAR CHECKBOX
-
-      sideBarDiv.appendChild(circleDiv);
-
-      sideBar.appendChild(sideBarDiv);
-    });
-
-    const Checkbox = document.createElement("input");
-    Checkbox.type = "checkbox";
-
-    Checkbox.addEventListener("change", (event) => {
-      hideDone = Checkbox.checked;
-      boxContainer.innerHTML = "";
-      handleGetTasks(hideDone);
-    });
-
-    const doneTasks = document.createElement("div");
-
-    const span = document.createElement("span");
-    span.textContent = "Hide Done Tasks";
-    span.style.fontSize = "12px";
-
-    doneTasks.appendChild(Checkbox);
-    doneTasks.appendChild(span);
-    sideBar.appendChild(doneTasks);
-  }
-
-  $("#addCategory").click(function () {
-    handleAddCategory();
-
     function handleCategory() {
       const formData = {
         user_id: userId,
@@ -264,6 +274,9 @@ $(document).ready(function () {
         data: formData,
         success: function (res) {
           handleGetTags();
+          console.log(res);
+          console.log(res.id);
+          tag__id = res.id;
           if (categoryInput.value != "") {
             $(".circle1").show();
             $("#work").show();
@@ -304,12 +317,10 @@ $(document).ready(function () {
     });
   }
 
-  function handleDisplayTasks(data, toHide) {
+  function handleDisplayTasks(data, toHide, tagColor) {
     $(".box").show();
     $(".add").hide();
     const boxDiv = document.createElement("div");
-
-    // boxContainer.innerHTML = "";
 
     boxDiv.classList.add("box");
     const editDiv = document.createElement("div");
@@ -338,11 +349,88 @@ $(document).ready(function () {
     editDiv.appendChild(taskTitle);
     editDiv.appendChild(dropDownDiv);
     boxDiv.appendChild(editDiv);
+
     const desDiv = document.createElement("p");
     desDiv.classList.add("dcn");
     desDiv.textContent = data.content;
+    const editBox = document.createElement("div");
+    const editButton = document.createElement("button");
+    const canceEdit = document.createElement("button");
+    editButton.innerText = "Edit Task";
+    canceEdit.innerText = "Cancel";
+
+    editBox.appendChild(editButton);
+    editBox.appendChild(canceEdit);
+
+    editBox.style.display = "none";
     data.completed ? desDiv.classList.add("addlinethrough") : "";
     boxDiv.append(desDiv);
+    boxDiv.append(editBox);
+
+    $(editTask).click(function () {
+      editBox.style.display = "flex";
+      editBox.style.gap = "3px";
+      taskTitle.contentEditable = true;
+      desDiv.contentEditable = true;
+
+      taskTitle.isContentEditable
+        ? (taskTitle.style.border = "3px solid red")
+        : null;
+      desDiv.isContentEditable ? (desDiv.style.border = "3px solid red") : null;
+
+      $(canceEdit).click(() => {
+        taskTitle.style.border = "none";
+        desDiv.style.border = "none";
+        taskTitle.contentEditable = false;
+        desDiv.contentEditable = false;
+        editBox.style.display = "none";
+      });
+
+      $(editButton).click(() => {
+        const formData = {
+          title: taskTitle.textContent,
+          content: desDiv.textContent,
+        };
+        const title = taskTitle.textContent;
+        const des = desDiv.textContent;
+
+        if (!!title && !!des) {
+          $.ajax({
+            url: `http://todo.reworkstaging.name.ng/v1/tasks/${data.id}`,
+            type: "put",
+            data: formData,
+            success: function (res) {
+              taskTitle.style.border = "none";
+              desDiv.style.border = "none";
+              taskTitle.contentEditable = false;
+              desDiv.contentEditable = false;
+              editBox.style.display = "none";
+              handleGetTasks();
+            },
+            error: function (err) {
+              console.log("msg err", err);
+              return;
+            },
+          });
+        } else {
+          return;
+        }
+      });
+    });
+
+    $(deleteTask).click(() => {
+      $.ajax({
+        url: `http://todo.reworkstaging.name.ng/v1/tasks/${data.id}`,
+        type: "delete",
+        success: function (res) {
+          handleGetTasks();
+        },
+        error: function (err) {
+          console.log("msg err", err);
+          return;
+        },
+      });
+    });
 
     const circleContainer = document.createElement("div");
     circleContainer.classList.add("circlecontainer");
@@ -353,6 +441,10 @@ $(document).ready(function () {
     const tagColorDiv1 = document.createElement("div");
     tagColorDiv1.classList.add("catDiv1");
 
+    if (tagColor) {
+      tagColorDiv1.style.backgroundColor = tagColor;
+    }
+
     getColorsData?.map((colorData) => {
       if (data.tag == colorData.title) {
         tagColorDiv1.style.backgroundColor = colorData.color;
@@ -360,6 +452,7 @@ $(document).ready(function () {
     });
 
     circletaskDiv.appendChild(tagColorDiv1);
+
     const input = document.createElement("input");
     input.type = "checkbox";
     input.checked = data.completed;
@@ -388,9 +481,7 @@ $(document).ready(function () {
         type: "put",
         data: formData,
         success: function (res) {
-          // data.completed
-          //   ? taskTitle.classList.add("addlinethrough")
-          //   : taskTitle.classList.remove("addlinethrough");
+          console.log(res);
         },
         error: function (err) {
           console.log("msg err", err);
@@ -413,6 +504,7 @@ $(document).ready(function () {
     } else if (toHide && !data.completed) {
       boxContainer.appendChild(boxDiv);
     } else if (!toHide) {
+      console.log(toHide);
       boxContainer.appendChild(boxDiv);
     } else return;
 
@@ -421,6 +513,8 @@ $(document).ready(function () {
   }
 
   function handleGetTasks(toHide) {
+    boxContainer.innerHTML = "";
+
     $.ajax({
       url: `http://todo.reworkstaging.name.ng/v1/tasks?user_id=${userId}`,
       type: "GET",
@@ -457,6 +551,15 @@ $(document).ready(function () {
 
       tagTitleText.addEventListener("click", () => {
         createTaskTagId = data.id;
+
+        const allTagTitleText = document.querySelectorAll(".modalTagtitle");
+        allTagTitleText.forEach((element) => {
+          element.classList.remove("colorsDiv");
+        });
+
+        if (tagTitleText.textContent == data.title) {
+          tagTitleText.classList.add("colorsDiv");
+        }
       });
     });
 
@@ -476,7 +579,7 @@ $(document).ready(function () {
         type: "post",
         data: formData,
         success: function (res) {
-          handleDisplayTasks(res);
+          handleGetTasks();
         },
         error: function (err) {
           console.log("msg err", err);
@@ -486,10 +589,6 @@ $(document).ready(function () {
     } else {
       return;
     }
-
-    $(".editTask1").click(function () {
-      $(".add").show();
-    });
 
     $(".delete1").click(function e() {
       e.target = e.target.parentElement;
