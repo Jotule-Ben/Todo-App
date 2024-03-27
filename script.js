@@ -65,6 +65,7 @@ $(document).ready(function () {
 
           handleGetTags();
           handleGetTasks();
+          $("#plus").hide();
           console.log(localStorage);
         },
         error: function (err) {
@@ -169,7 +170,7 @@ $(document).ready(function () {
 
       const deleteTag = document.createElement("button");
       deleteTag.textContent = "delete";
-      deleteTag.classList.add("deleteTag");
+      // deleteTag.classList.add("deleteTag");
 
       circleDiv.appendChild(circle);
       circleDiv.appendChild(circleText);
@@ -357,7 +358,13 @@ $(document).ready(function () {
     const editButton = document.createElement("button");
     const canceEdit = document.createElement("button");
     editButton.innerText = "Edit Task";
+    editButton.style.backgroundColor = "rgb(240 225 176)";
+    editButton.style.border = "none";
+    editButton.style.padding = "3px";
     canceEdit.innerText = "Cancel";
+    canceEdit.style.backgroundColor = "rgb(240 225 176)";
+    canceEdit.style.border = "none";
+    canceEdit.style.padding = "3px";
 
     editBox.appendChild(editButton);
     editBox.appendChild(canceEdit);
@@ -374,9 +381,11 @@ $(document).ready(function () {
       desDiv.contentEditable = true;
 
       taskTitle.isContentEditable
-        ? (taskTitle.style.border = "3px solid red")
+        ? (taskTitle.style.border = "1px solid #ccaeae")
         : null;
-      desDiv.isContentEditable ? (desDiv.style.border = "3px solid red") : null;
+      desDiv.isContentEditable
+        ? (desDiv.style.border = "1px solid #ccaeae")
+        : null;
 
       $(canceEdit).click(() => {
         taskTitle.style.border = "none";
@@ -589,12 +598,6 @@ $(document).ready(function () {
     } else {
       return;
     }
-
-    $(".delete1").click(function e() {
-      e.target = e.target.parentElement;
-      e.target.hide();
-      // $(".box").hide();
-    });
   });
 
   $("#acCancelp").click(function () {
@@ -604,4 +607,19 @@ $(document).ready(function () {
   $("#cancelp").click(function () {
     $(".add").hide();
   });
+});
+
+$("#logOut").click(() => {
+  $("#suEmail").val("");
+  $("#suPassword").val("");
+  $("#name").val("");
+
+  $("#email").val("");
+  $("#password").val("");
+  $(".MAIN").hide();
+  $(".add").hide();
+  $(".editTask").hide();
+  $("#landingPage").show();
+  $(".addCategory").hide();
+  $(".addCategory").hide();
 });

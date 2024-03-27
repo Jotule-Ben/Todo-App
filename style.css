@@ -153,6 +153,10 @@ aside {
   padding-bottom: 0;
 }
 
+.dcn{
+  margin-bottom: 4px;
+}
+
 aside p {
   cursor: pointer;
 }
@@ -190,7 +194,7 @@ section {
 
 .box {
   width: 48%;
-  height: 160px;
+  height: 170px;
   padding: 20px;
   background-color: #fff9dc;
   margin: 5px;
@@ -320,8 +324,8 @@ section {
 
 .add {
   position: absolute;
-  margin: 5% 25%;
-  width: 50%;
+    margin: 5% 35%;
+    width: 30%;
   top: 0;
   height: auto;
   /* background-color: red; */
@@ -407,7 +411,7 @@ section {
 .belowtag {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   overflow: auto;
 }
 
@@ -757,6 +761,20 @@ section {
   background-color: aqua;
   /* display: none; */
 }
+
+
+#logOut{
+    color: #fff;
+    background-color: rgb(241, 58, 58);
+    border: 1px solid rgb(241, 58, 58);
+    padding: 5px;
+    position: fixed;
+    bottom: 4px;
+    cursor: pointer;
+    left: 30px;
+    border-radius: 10px;
+}
+
 
 @media screen and (max-width: 768px) {
   .round {
